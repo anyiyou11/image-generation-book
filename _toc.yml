@@ -3,10 +3,17 @@
 
 format: jb-book
 root: index
-chapters:
-  - file: book/markdown
-  - file: book/notebooks
-  - file: book/bibliography
+parts:
+- caption: IMAGE GENERATION MODEL
+  numbered: true
+  chapters:
+  - file: book/generation-model/gan
+  - file: book/generation-model/diffusion-model
+- caption: ASSIGNMENTS
+  numbered: true
+  chapters:
+  - file: book/assignments/art-by-gan.ipynb
+  - file: book/assignments/denoising-difussion-model
 
 # Or you organize the TOC by parts
 
