@@ -4,16 +4,31 @@
 format: jb-book
 root: index
 parts:
+- caption: PREREQUISITES 
+  numbered: true
+  chapters:
+  - file: book/pre/python-programming-introduction
+  - file: book/pre/python-programming-basics
+  - file: book/pre/python-programming-advanced
 - caption: IMAGE GENERATION MODEL
   numbered: true
   chapters:
   - file: book/generation-model/gan
   - file: book/generation-model/diffusion-model
+  - file: book/generation-model/autoencoder
+    sections:
+    - file: book/generation-model/vae
 - caption: ASSIGNMENTS
   numbered: true
   chapters:
+  - file: book/assignments/python-programming-introduction
+  - file: book/assignments/python-programming-basics
+  - file: book/assignments/python-programming-advanced
   - file: book/assignments/art-by-gan.ipynb
   - file: book/assignments/denoising-difussion-model
+  - file: book/assignments/base-denoising-autoencoder-dimension-reduction
+
+
 
 # Or you organize the TOC by parts
 
