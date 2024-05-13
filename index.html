@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>Welcome to your Jupyter Book &#8212; Image generation learning book</title>
+    <title>Welcome to the Image Generation Technology Learning Book &#8212; Image generation learning book</title>
   
   
   
@@ -64,7 +64,7 @@
     <link rel="icon" href="_static/fav.ico"/>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="1. Generative adversarial networks" href="book/generation-model/gan.html" />
+    <link rel="next" title="1. Python programming introduction" href="book/pre/python-programming-introduction.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -173,17 +173,31 @@
  </script></div>
         <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item navbar-nav active">
-        <p aria-level="2" class="caption" role="heading"><span class="caption-text">IMAGE GENERATION MODEL</span></p>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">PREREQUISITES</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="book/generation-model/gan.html">1. Generative adversarial networks</a></li>
-<li class="toctree-l1"><a class="reference internal" href="book/generation-model/diffusion-model.html">2. Diffusion Model</a></li>
+<li class="toctree-l1"><a class="reference internal" href="book/pre/python-programming-introduction.html">1. Python programming introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="book/pre/python-programming-basics.html">2. Python programming basics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="book/pre/python-programming-advanced.html">3. Python programming advanced</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">IMAGE GENERATION MODEL</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="book/generation-model/gan.html">4. Generative adversarial networks</a></li>
+<li class="toctree-l1"><a class="reference internal" href="book/generation-model/diffusion-model.html">5. Diffusion Model</a></li>
 
+<li class="toctree-l1 has-children"><a class="reference internal" href="book/generation-model/autoencoder.html">7. AUTOENCODERS</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="book/generation-model/vae.html">7.7. Variational Autoencoder</a></li>
+</ul>
+</li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">ASSIGNMENTS</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="book/assignments/art-by-gan.html">4. Art by gan</a></li>
+<li class="toctree-l1"><a class="reference internal" href="book/assignments/python-programming-introduction.html">8. Python programming introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="book/assignments/python-programming-basics.html">9. Python programming basics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="book/assignments/python-programming-advanced.html">10. Python programming advanced</a></li>
+<li class="toctree-l1"><a class="reference internal" href="book/assignments/art-by-gan.html">11. Art by gan</a></li>
 
-<li class="toctree-l1"><a class="reference internal" href="book/assignments/denoising-difussion-model.html">6. Summary</a></li>
+<li class="toctree-l1"><a class="reference internal" href="book/assignments/denoising-difussion-model.html">13. Denoising Diffusion Models</a></li>
+<li class="toctree-l1"><a class="reference internal" href="book/assignments/base-denoising-autoencoder-dimension-reduction.html">14. Base/Denoising Autoencoder &amp; Dimension Reduction</a></li>
 </ul>
 
     </div>
@@ -373,7 +387,9 @@ document.write(`
   </button>
 `);
 </script>
-
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
 </div></div>
       
     </div>
@@ -384,11 +400,21 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Welcome to your Jupyter Book</h1>
+    <h1>Welcome to the Image Generation Technology Learning Book</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
             
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#prerequisite-knowledge">Prerequisite Knowledge</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#image-generation-models">Image Generation Models</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#assignments">Assignments</a></li>
+</ul>
+            </nav>
         </div>
     </div>
 </div>
@@ -398,19 +424,24 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="welcome-to-your-jupyter-book">
-<h1>Welcome to your Jupyter Book<a class="headerlink" href="#welcome-to-your-jupyter-book" title="Link to this heading">#</a></h1>
-<p>This is a small sample book to give you a feel for how book content is
-structured.</p>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>Here is a note!</p>
+  <section class="tex2jax_ignore mathjax_ignore" id="welcome-to-the-image-generation-technology-learning-book">
+<h1>Welcome to the Image Generation Technology Learning Book<a class="headerlink" href="#welcome-to-the-image-generation-technology-learning-book" title="Link to this heading">#</a></h1>
+<p>This book aims to help you understand image generation technology, including Generative Adversarial Networks (GANs)、Variational Autoencoder and Stable Diffusion Models. Through this book, you will learn about the necessary background knowledge, different types of image generation models, and some practical assignments to help you master the field.</p>
+<section id="prerequisite-knowledge">
+<h2>Prerequisite Knowledge<a class="headerlink" href="#prerequisite-knowledge" title="Link to this heading">#</a></h2>
+<p>Before diving into image generation technology, we will provide you with some necessary prerequisite python knowledge to help you better understand the subsequent learning content.</p>
+</section>
+<section id="image-generation-models">
+<h2>Image Generation Models<a class="headerlink" href="#image-generation-models" title="Link to this heading">#</a></h2>
+<p>This website will introduce different types of image generation models, including Generative Adversarial Networks (GANs), Variational Autoencoders (VAEs), etc. You will learn about the principles, application scenarios, and implementation methods of these models.</p>
+</section>
+<section id="assignments">
+<h2>Assignments<a class="headerlink" href="#assignments" title="Link to this heading">#</a></h2>
+<p>To help you consolidate your knowledge, we have prepared some practical assignments. Through these assignments, you will have the opportunity to implement image generation models and apply them to real-world problems.</p>
+<p>We hope this book can be a good starting point for your study of image generation technology, helping you explore the field more deeply. Happy learning!</p>
+</section>
+<div class="toctree-wrapper compound">
 </div>
-<p>And here is a code block:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">e</span> <span class="o">=</span> <span class="n">mc</span><span class="o">^</span><span class="mi">2</span>
-</pre></div>
-</div>
-<p>Check out the content pages bundled with this sample book to see more.</p>
 <div class="toctree-wrapper compound">
 </div>
 <div class="toctree-wrapper compound">
@@ -448,11 +479,11 @@ structured.</p>
                   
 <div class="prev-next-area">
     <a class="right-next"
-       href="book/generation-model/gan.html"
+       href="book/pre/python-programming-introduction.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title"><span class="section-number">1. </span>Generative adversarial networks</p>
+        <p class="prev-next-title"><span class="section-number">1. </span>Python programming introduction</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -463,7 +494,22 @@ structured.</p>
             
             
               
-                <div class="bd-sidebar-secondary bd-toc"></div>
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#prerequisite-knowledge">Prerequisite Knowledge</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#image-generation-models">Image Generation Models</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#assignments">Assignments</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
               
             
           </div>

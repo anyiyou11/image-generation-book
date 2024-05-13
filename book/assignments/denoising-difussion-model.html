@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>6. Summary &#8212; Image generation learning book</title>
+    <title>13. Denoising Diffusion Models &#8212; Image generation learning book</title>
   
   
   
@@ -62,7 +62,8 @@
     <link rel="icon" href="../../_static/fav.ico"/>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="prev" title="4. Art by gan" href="art-by-gan.html" />
+    <link rel="next" title="14. Base/Denoising Autoencoder &amp; Dimension Reduction" href="base-denoising-autoencoder-dimension-reduction.html" />
+    <link rel="prev" title="11. Art by gan" href="art-by-gan.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -169,17 +170,31 @@
  </script></div>
         <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item navbar-nav active">
-        <p aria-level="2" class="caption" role="heading"><span class="caption-text">IMAGE GENERATION MODEL</span></p>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">PREREQUISITES</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="../generation-model/gan.html">1. Generative adversarial networks</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../generation-model/diffusion-model.html">2. Diffusion Model</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../pre/python-programming-introduction.html">1. Python programming introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../pre/python-programming-basics.html">2. Python programming basics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../pre/python-programming-advanced.html">3. Python programming advanced</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">IMAGE GENERATION MODEL</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../generation-model/gan.html">4. Generative adversarial networks</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../generation-model/diffusion-model.html">5. Diffusion Model</a></li>
 
+<li class="toctree-l1 has-children"><a class="reference internal" href="../generation-model/autoencoder.html">7. AUTOENCODERS</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../generation-model/vae.html">7.7. Variational Autoencoder</a></li>
+</ul>
+</li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">ASSIGNMENTS</span></p>
 <ul class="current nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="art-by-gan.html">4. Art by gan</a></li>
+<li class="toctree-l1"><a class="reference internal" href="python-programming-introduction.html">8. Python programming introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="python-programming-basics.html">9. Python programming basics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="python-programming-advanced.html">10. Python programming advanced</a></li>
+<li class="toctree-l1"><a class="reference internal" href="art-by-gan.html">11. Art by gan</a></li>
 
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">6. Summary</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">13. Denoising Diffusion Models</a></li>
+<li class="toctree-l1"><a class="reference internal" href="base-denoising-autoencoder-dimension-reduction.html">14. Base/Denoising Autoencoder &amp; Dimension Reduction</a></li>
 </ul>
 
     </div>
@@ -431,7 +446,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Summary</h1>
+    <h1>Denoising Diffusion Models</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -441,16 +456,16 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#hyperparams">6.1. Hyperparams</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dataset">6.2. Dataset</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#denoising-network">6.3. Denoising Network</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#todo-can-we-use-something-simpler">6.4. TODO: can we use something simpler?</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#custom-residual-network">6.5. Custom Residual Network</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#residual-u-net">6.6. Residual U-Net</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#difussion-model">6.7. Difussion Model</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#complete-model">6.8. Complete Model</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#visualize">6.9. Visualize</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#acknowledgments">6.10. Acknowledgments</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#hyperparams">13.1. Hyperparams</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dataset">13.2. Dataset</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#denoising-network">13.3. Denoising Network</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#todo-can-we-use-something-simpler">13.4. TODO: can we use something simpler?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#custom-residual-network">13.5. Custom Residual Network</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#residual-u-net">13.6. Residual U-Net</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#difussion-model">13.7. Difussion Model</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#complete-model">13.8. Complete Model</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#visualize">13.9. Visualize</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#acknowledgments">13.10. Acknowledgments</a></li>
 </ul>
             </nav>
         </div>
@@ -462,12 +477,12 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="summary">
-<h1><span class="section-number">6. </span>Summary<a class="headerlink" href="#summary" title="Link to this heading">#</a></h1>
+  <section class="tex2jax_ignore mathjax_ignore" id="denoising-diffusion-models">
+<h1><span class="section-number">13. </span>Denoising Diffusion Models<a class="headerlink" href="#denoising-diffusion-models" title="Link to this heading">#</a></h1>
 <p>This notebook shows how to train Denoising Difussion Models.</p>
 <p>The code has been adapted and curated from <a class="reference external" href="https://colab.research.google.com/github/keras-team/keras-io/blob/master/examples/generative/ipynb/ddim.ipynb#scrollTo=XtxiDuXZGcAu">this tutorial by Andras Beres</a>.</p>
 <section id="hyperparams">
-<h2><span class="section-number">6.1. </span>Hyperparams<a class="headerlink" href="#hyperparams" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">13.1. </span>Hyperparams<a class="headerlink" href="#hyperparams" title="Link to this heading">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
@@ -498,7 +513,7 @@ document.write(`
 </div>
 </section>
 <section id="dataset">
-<h2><span class="section-number">6.2. </span>Dataset<a class="headerlink" href="#dataset" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">13.2. </span>Dataset<a class="headerlink" href="#dataset" title="Link to this heading">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">preprocess_image</span><span class="p">(</span><span class="n">data</span><span class="p">):</span>
@@ -542,11 +557,11 @@ document.write(`
 </details>
 </div></section>
 <section id="denoising-network">
-<h2><span class="section-number">6.3. </span>Denoising Network<a class="headerlink" href="#denoising-network" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">13.3. </span>Denoising Network<a class="headerlink" href="#denoising-network" title="Link to this heading">#</a></h2>
 <p>We will use the <a class="reference external" href="https://www.sciencedirect.com/science/article/abs/pii/S0924271620300149">Residual U-Net</a> model.</p>
 </section>
 <section id="todo-can-we-use-something-simpler">
-<h2><span class="section-number">6.4. </span>TODO: can we use something simpler?<a class="headerlink" href="#todo-can-we-use-something-simpler" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">13.4. </span>TODO: can we use something simpler?<a class="headerlink" href="#todo-can-we-use-something-simpler" title="Link to this heading">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">embedding_max_frequency</span> <span class="o">=</span> <span class="mf">1000.0</span>
@@ -576,7 +591,7 @@ document.write(`
 </details>
 </div></section>
 <section id="custom-residual-network">
-<h2><span class="section-number">6.5. </span>Custom Residual Network<a class="headerlink" href="#custom-residual-network" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">13.5. </span>Custom Residual Network<a class="headerlink" href="#custom-residual-network" title="Link to this heading">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">get_network_custom</span><span class="p">(</span><span class="n">image_size</span><span class="p">,</span> <span class="n">block_depth</span><span class="o">=</span><span class="mi">17</span><span class="p">,</span> <span class="n">output_channels</span><span class="o">=</span><span class="mi">1</span><span class="p">):</span>
@@ -611,7 +626,7 @@ document.write(`
 </details>
 </div></section>
 <section id="residual-u-net">
-<h2><span class="section-number">6.6. </span>Residual U-Net<a class="headerlink" href="#residual-u-net" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">13.6. </span>Residual U-Net<a class="headerlink" href="#residual-u-net" title="Link to this heading">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">widths</span> <span class="o">=</span> <span class="p">[</span><span class="mi">32</span><span class="p">,</span> <span class="mi">64</span><span class="p">,</span> <span class="mi">96</span><span class="p">,</span> <span class="mi">128</span><span class="p">]</span>
@@ -693,7 +708,7 @@ document.write(`
 </details>
 </div></section>
 <section id="difussion-model">
-<h2><span class="section-number">6.7. </span>Difussion Model<a class="headerlink" href="#difussion-model" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">13.7. </span>Difussion Model<a class="headerlink" href="#difussion-model" title="Link to this heading">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">DiffusionModel</span><span class="p">(</span><span class="n">tf</span><span class="o">.</span><span class="n">keras</span><span class="o">.</span><span class="n">Model</span><span class="p">):</span>
@@ -814,7 +829,7 @@ document.write(`
 </details>
 </div></section>
 <section id="complete-model">
-<h2><span class="section-number">6.8. </span>Complete Model<a class="headerlink" href="#complete-model" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">13.8. </span>Complete Model<a class="headerlink" href="#complete-model" title="Link to this heading">#</a></h2>
 <p>Chose one of the residual networks.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -946,7 +961,7 @@ Epoch 10/10
 </div>
 </section>
 <section id="visualize">
-<h2><span class="section-number">6.9. </span>Visualize<a class="headerlink" href="#visualize" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">13.9. </span>Visualize<a class="headerlink" href="#visualize" title="Link to this heading">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">num_rows</span> <span class="o">=</span> <span class="mi">2</span>
@@ -975,7 +990,7 @@ Epoch 10/10
 </div>
 </section>
 <section id="acknowledgments">
-<h2><span class="section-number">6.10. </span>Acknowledgments<a class="headerlink" href="#acknowledgments" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">13.10. </span>Acknowledgments<a class="headerlink" href="#acknowledgments" title="Link to this heading">#</a></h2>
 <p>Thanks to <a class="reference external" href="https://www.kaggle.com/mskorski">Maciej Skorski</a> for creating <a class="reference external" href="https://www.kaggle.com/code/mskorski/denoising-difussion-model">Denoising Difussion Model</a>. It inspires the majority of the content in this chapter.</p>
 </section>
 </section>
@@ -1016,8 +1031,17 @@ Epoch 10/10
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title"><span class="section-number">4. </span>Art by gan</p>
+        <p class="prev-next-title"><span class="section-number">11. </span>Art by gan</p>
       </div>
+    </a>
+    <a class="right-next"
+       href="base-denoising-autoencoder-dimension-reduction.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title"><span class="section-number">14. </span>Base/Denoising Autoencoder &amp; Dimension Reduction</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
     </a>
 </div>
                 </footer>
@@ -1035,16 +1059,16 @@ Epoch 10/10
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#hyperparams">6.1. Hyperparams</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dataset">6.2. Dataset</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#denoising-network">6.3. Denoising Network</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#todo-can-we-use-something-simpler">6.4. TODO: can we use something simpler?</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#custom-residual-network">6.5. Custom Residual Network</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#residual-u-net">6.6. Residual U-Net</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#difussion-model">6.7. Difussion Model</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#complete-model">6.8. Complete Model</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#visualize">6.9. Visualize</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#acknowledgments">6.10. Acknowledgments</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#hyperparams">13.1. Hyperparams</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dataset">13.2. Dataset</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#denoising-network">13.3. Denoising Network</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#todo-can-we-use-something-simpler">13.4. TODO: can we use something simpler?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#custom-residual-network">13.5. Custom Residual Network</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#residual-u-net">13.6. Residual U-Net</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#difussion-model">13.7. Difussion Model</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#complete-model">13.8. Complete Model</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#visualize">13.9. Visualize</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#acknowledgments">13.10. Acknowledgments</a></li>
 </ul>
   </nav></div>
 

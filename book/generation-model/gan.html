@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>1. Generative adversarial networks &#8212; Image generation learning book</title>
+    <title>4. Generative adversarial networks &#8212; Image generation learning book</title>
   
   
   
@@ -62,8 +62,8 @@
     <link rel="icon" href="../../_static/fav.ico"/>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="2. Diffusion Model" href="diffusion-model.html" />
-    <link rel="prev" title="Welcome to your Jupyter Book" href="../../index.html" />
+    <link rel="next" title="5. Diffusion Model" href="diffusion-model.html" />
+    <link rel="prev" title="3. Python programming advanced" href="../pre/python-programming-advanced.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -170,17 +170,31 @@
  </script></div>
         <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item navbar-nav active">
-        <p aria-level="2" class="caption" role="heading"><span class="caption-text">IMAGE GENERATION MODEL</span></p>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">PREREQUISITES</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../pre/python-programming-introduction.html">1. Python programming introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../pre/python-programming-basics.html">2. Python programming basics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../pre/python-programming-advanced.html">3. Python programming advanced</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">IMAGE GENERATION MODEL</span></p>
 <ul class="current nav bd-sidenav">
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">1. Generative adversarial networks</a></li>
-<li class="toctree-l1"><a class="reference internal" href="diffusion-model.html">2. Diffusion Model</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">4. Generative adversarial networks</a></li>
+<li class="toctree-l1"><a class="reference internal" href="diffusion-model.html">5. Diffusion Model</a></li>
 
+<li class="toctree-l1 has-children"><a class="reference internal" href="autoencoder.html">7. AUTOENCODERS</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="vae.html">7.7. Variational Autoencoder</a></li>
+</ul>
+</li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">ASSIGNMENTS</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="../assignments/art-by-gan.html">4. Art by gan</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../assignments/python-programming-introduction.html">8. Python programming introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../assignments/python-programming-basics.html">9. Python programming basics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../assignments/python-programming-advanced.html">10. Python programming advanced</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../assignments/art-by-gan.html">11. Art by gan</a></li>
 
-<li class="toctree-l1"><a class="reference internal" href="../assignments/denoising-difussion-model.html">6. Summary</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../assignments/denoising-difussion-model.html">13. Denoising Diffusion Models</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../assignments/base-denoising-autoencoder-dimension-reduction.html">14. Base/Denoising Autoencoder &amp; Dimension Reduction</a></li>
 </ul>
 
     </div>
@@ -442,27 +456,28 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#overview">1.1. Overview</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#basic-principle">1.2. Basic Principle</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#mathematically-modeling">1.3. Mathematically Modeling</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#training-a-gan">1.4. Training a GAN</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#code">1.5. Code</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#function-of-displaying-a-grid-of-images">1.5.1. Function of displaying a grid of images</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#functions-of-pre-processing-and-post-processing-images">1.5.2. Functions of pre-processing and post-processing images</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#download-a-file-from-a-url-using-the-requests-library">1.5.3. Download a file from a URL using the requests library</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#load-data">1.5.4. Load Data</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#compute-the-leaky-relu-activation-function">1.5.5. Compute the leaky ReLU activation function</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#generate-random-uniform-noise-from-1-to-1">1.5.6. Generate random uniform noise from -1 to 1</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#compute-discriminator-score-for-a-batch-of-input-images">1.5.7. Compute discriminator score for a batch of input images</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#compute-generator-score-for-a-batch-of-input-images">1.5.8. Compute generator score for a batch of input images</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#compute-the-discriminator-loss">1.5.9. Compute the discriminator loss</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#compute-the-generator-loss">1.5.10. Compute the generator loss</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#create-solvers-for-gan-training">1.5.11. Create solvers for GAN training</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#train-a-gan-for-a-certain-number-of-epochs">1.5.12. Train a GAN for a certain number of epochs</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#overview">4.1. Overview</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#basic-principle">4.2. Basic Principle</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#mathematically-modeling">4.3. Mathematically Modeling</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#training-a-gan">4.4. Training a GAN</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#explore-generative-adversarial-nets">4.5. Explore Generative Adversarial Nets</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#code">4.6. Code</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#function-of-displaying-a-grid-of-images">4.6.1. Function of displaying a grid of images</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#functions-of-pre-processing-and-post-processing-images">4.6.2. Functions of pre-processing and post-processing images</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#download-a-file-from-a-url-using-the-requests-library">4.6.3. Download a file from a URL using the requests library</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#load-data">4.6.4. Load Data</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#compute-the-leaky-relu-activation-function">4.6.5. Compute the leaky ReLU activation function</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#generate-random-uniform-noise-from-1-to-1">4.6.6. Generate random uniform noise from -1 to 1</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#compute-discriminator-score-for-a-batch-of-input-images">4.6.7. Compute discriminator score for a batch of input images</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#compute-generator-score-for-a-batch-of-input-images">4.6.8. Compute generator score for a batch of input images</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#compute-the-discriminator-loss">4.6.9. Compute the discriminator loss</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#compute-the-generator-loss">4.6.10. Compute the generator loss</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#create-solvers-for-gan-training">4.6.11. Create solvers for GAN training</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#train-a-gan-for-a-certain-number-of-epochs">4.6.12. Train a GAN for a certain number of epochs</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#your-turn">1.6. Your turn! 🚀</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#acknowledgments">1.7. Acknowledgments</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#your-turn">4.7. Your turn! 🚀</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#acknowledgments">4.8. Acknowledgments</a></li>
 </ul>
             </nav>
         </div>
@@ -492,9 +507,9 @@ document.write(`
 </details>
 </div>
 <section class="tex2jax_ignore mathjax_ignore" id="generative-adversarial-networks">
-<h1><span class="section-number">1. </span>Generative adversarial networks<a class="headerlink" href="#generative-adversarial-networks" title="Link to this heading">#</a></h1>
+<h1><span class="section-number">4. </span>Generative adversarial networks<a class="headerlink" href="#generative-adversarial-networks" title="Link to this heading">#</a></h1>
 <section id="overview">
-<h2><span class="section-number">1.1. </span>Overview<a class="headerlink" href="#overview" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">4.1. </span>Overview<a class="headerlink" href="#overview" title="Link to this heading">#</a></h2>
 <p>GAN has been applied in real-life applications such as text/image/video generation, drug discovery, and text-to-image synthesis. The following images are examples of image transformation using GANs.</p>
 <div style="text-align:center;">
 <img src="https://static-1300131294.cos.ap-shanghai.myqcloud.com/images/deep-learning/GAN/image-to-image.png" width="90%" class="bg-white mb-1">
@@ -508,7 +523,7 @@ document.write(`
 <p>GAN is proposed in 2005, the paper is Ian J. Goodfellow, Jean Pouget-Abadie, Mehdi Mirza, Bing Xu, David Warde-Farley, Sherjil Ozair, Aaron Courville, Yoshua Bengio. “Generative Adversarial Networks”, arxiv:1406.2661.</p>
 </section>
 <section id="basic-principle">
-<h2><span class="section-number">1.2. </span>Basic Principle<a class="headerlink" href="#basic-principle" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">4.2. </span>Basic Principle<a class="headerlink" href="#basic-principle" title="Link to this heading">#</a></h2>
 <div style="text-align:center;">
 <img src="https://static-1300131294.cos.ap-shanghai.myqcloud.com/images/deep-learning/GAN/gan-concept.png" width="60%" height="60%" class="bg-white mb-1">
 </div>
@@ -516,7 +531,7 @@ document.write(`
 <p>The discriminator, on the other hand, is another important component of a GAN, responsible for determining whether the input data is real or generated (fake) data. The discriminator is usually a binary classifier that takes a data sample as input and outputs a scalar representing the probability that the input data is real.</p>
 </section>
 <section id="mathematically-modeling">
-<h2><span class="section-number">1.3. </span>Mathematically Modeling<a class="headerlink" href="#mathematically-modeling" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">4.3. </span>Mathematically Modeling<a class="headerlink" href="#mathematically-modeling" title="Link to this heading">#</a></h2>
 <p>GAN consists of two neural networks: a generator G(z, θ₁) and a discriminator D(x, θ₂). The generator maps random noise variable z to the data space x, attempting to generate realistic synthetic data. The discriminator classifies the data, outputting the probability that the data comes from the real dataset, ranging from 0 to 1.</p>
 <p>During training, the discriminator’s goal is to correctly classify real and generated data. Its weights are updated to maximize the probability of real data being classified as real, while minimizing the probability of generated data being classified as real. The generator’s goal is to generate sufficiently realistic data to fool the discriminator. Its weights are optimized to maximize the probability of generated data being classified as real.</p>
 <p>In practice, the logarithm of the probability (e.g. log D(…)) is used in the loss functions instead of the raw probabilies, since using a log loss heavily penalises classifiers that are confident about an incorrect classification.</p>
@@ -529,7 +544,7 @@ document.write(`
 </div>
 </section>
 <section id="training-a-gan">
-<h2><span class="section-number">1.4. </span>Training a GAN<a class="headerlink" href="#training-a-gan" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">4.4. </span>Training a GAN<a class="headerlink" href="#training-a-gan" title="Link to this heading">#</a></h2>
 <p>Since both the generator and discriminator are being modeled with neural, networks, agradient-based optimization algorithm can be used to train the GAN. In our coding example we’ll be using stochastic gradient descent, as it has proven to be succesfull in multiple fields.</p>
 <div style="text-align:center;">
 <img src="https://static-1300131294.cos.ap-shanghai.myqcloud.com/images/deep-learning/GAN/algorithm.png" width="60%" height="60%" class="bg-white mb-1">
@@ -543,8 +558,15 @@ document.write(`
 <li><p>Repeat from Step 1.</p></li>
 </ol>
 </section>
+<section id="explore-generative-adversarial-nets">
+<h2><span class="section-number">4.5. </span>Explore Generative Adversarial Nets<a class="headerlink" href="#explore-generative-adversarial-nets" title="Link to this heading">#</a></h2>
+<div style="text-align:center;">
+<img src="https://static-1300131294.cos.ap-shanghai.myqcloud.com/images/deep-learning/GAN/gan-playground.png" width="60%" height="60%" class="bg-white mb-1">
+</div>
+<p><a href="https://static-1300131294.cos.ap-shanghai.myqcloud.com/html/gan-playground/gan-playground-gh-pages/index.html" target="_blank">GAN Playground</a></p>
+</section>
 <section id="code">
-<h2><span class="section-number">1.5. </span>Code<a class="headerlink" href="#code" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">4.6. </span>Code<a class="headerlink" href="#code" title="Link to this heading">#</a></h2>
 <div style="text-align:center;">
 <img src="https://static-1300131294.cos.ap-shanghai.myqcloud.com/images/deep-learning/GAN/dcgan_mnist.gif" width="30%" height="30%">
 <p style="text-align:center;">Create Hand-written digits
@@ -571,7 +593,7 @@ document.write(`
 </div>
 <p>Here, the default parameters of matplotlib are set, including the size of the plots, the interpolation method for images, and the colormap for images.</p>
 <section id="function-of-displaying-a-grid-of-images">
-<h3><span class="section-number">1.5.1. </span>Function of displaying a grid of images<a class="headerlink" href="#function-of-displaying-a-grid-of-images" title="Link to this heading">#</a></h3>
+<h3><span class="section-number">4.6.1. </span>Function of displaying a grid of images<a class="headerlink" href="#function-of-displaying-a-grid-of-images" title="Link to this heading">#</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">show_images</span><span class="p">(</span><span class="n">images</span><span class="p">):</span>
@@ -598,7 +620,7 @@ document.write(`
 <p>The show_images function is used to display a set of images. It displays the input set of images in a single figure window, with the number of rows and columns determined by the number of input images. Each image is placed in a subplot of a grid layout.</p>
 </section>
 <section id="functions-of-pre-processing-and-post-processing-images">
-<h3><span class="section-number">1.5.2. </span>Functions of pre-processing and post-processing images<a class="headerlink" href="#functions-of-pre-processing-and-post-processing-images" title="Link to this heading">#</a></h3>
+<h3><span class="section-number">4.6.2. </span>Functions of pre-processing and post-processing images<a class="headerlink" href="#functions-of-pre-processing-and-post-processing-images" title="Link to this heading">#</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">preprocess_img</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
@@ -620,7 +642,7 @@ document.write(`
 </div>
 </section>
 <section id="download-a-file-from-a-url-using-the-requests-library">
-<h3><span class="section-number">1.5.3. </span>Download a file from a URL using the requests library<a class="headerlink" href="#download-a-file-from-a-url-using-the-requests-library" title="Link to this heading">#</a></h3>
+<h3><span class="section-number">4.6.3. </span>Download a file from a URL using the requests library<a class="headerlink" href="#download-a-file-from-a-url-using-the-requests-library" title="Link to this heading">#</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">url</span> <span class="o">=</span> <span class="s1">&#39;https://static-1300131294.cos.ap-shanghai.myqcloud.com/data/deep-learning/Gan/gan-checks-tf.npz&#39;</span>
@@ -638,7 +660,7 @@ document.write(`
 </div>
 </section>
 <section id="load-data">
-<h3><span class="section-number">1.5.4. </span>Load Data<a class="headerlink" href="#load-data" title="Link to this heading">#</a></h3>
+<h3><span class="section-number">4.6.4. </span>Load Data<a class="headerlink" href="#load-data" title="Link to this heading">#</a></h3>
 <p>Here, the MNIST dataset is loaded and preprocessed, and an iterator interface is provided for iterating over the dataset in batches. The image data is normalized, which is beneficial for subsequent training.</p>
 <p>You can visit this link to learn more about the <a class="reference external" href="http://yann.lecun.com/exdb/mnist/">MNIST dataset</a> and <a class="reference external" href="https://github.com/soumith/ganhacks">preprocessing</a>.</p>
 <div class="cell docutils container">
@@ -676,7 +698,7 @@ document.write(`
 </div>
 </section>
 <section id="compute-the-leaky-relu-activation-function">
-<h3><span class="section-number">1.5.5. </span>Compute the leaky ReLU activation function<a class="headerlink" href="#compute-the-leaky-relu-activation-function" title="Link to this heading">#</a></h3>
+<h3><span class="section-number">4.6.5. </span>Compute the leaky ReLU activation function<a class="headerlink" href="#compute-the-leaky-relu-activation-function" title="Link to this heading">#</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">leaky_relu</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.01</span><span class="p">):</span>
@@ -690,7 +712,7 @@ document.write(`
 <p>Leaky ReLU allows a portion of negative values to pass through, maintaining the non-linear properties of the activation function, while also avoiding some of the issues that ReLU can lead to.</p>
 </section>
 <section id="generate-random-uniform-noise-from-1-to-1">
-<h3><span class="section-number">1.5.6. </span>Generate random uniform noise from -1 to 1<a class="headerlink" href="#generate-random-uniform-noise-from-1-to-1" title="Link to this heading">#</a></h3>
+<h3><span class="section-number">4.6.6. </span>Generate random uniform noise from -1 to 1<a class="headerlink" href="#generate-random-uniform-noise-from-1-to-1" title="Link to this heading">#</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">sample_noise</span><span class="p">(</span><span class="n">batch_size</span><span class="p">,</span> <span class="n">dim</span><span class="p">):</span>
@@ -703,7 +725,7 @@ document.write(`
 </div>
 </section>
 <section id="compute-discriminator-score-for-a-batch-of-input-images">
-<h3><span class="section-number">1.5.7. </span>Compute discriminator score for a batch of input images<a class="headerlink" href="#compute-discriminator-score-for-a-batch-of-input-images" title="Link to this heading">#</a></h3>
+<h3><span class="section-number">4.6.7. </span>Compute discriminator score for a batch of input images<a class="headerlink" href="#compute-discriminator-score-for-a-batch-of-input-images" title="Link to this heading">#</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">discriminator</span><span class="p">():</span>
@@ -743,7 +765,7 @@ document.write(`
 </div>
 </section>
 <section id="compute-generator-score-for-a-batch-of-input-images">
-<h3><span class="section-number">1.5.8. </span>Compute generator score for a batch of input images<a class="headerlink" href="#compute-generator-score-for-a-batch-of-input-images" title="Link to this heading">#</a></h3>
+<h3><span class="section-number">4.6.8. </span>Compute generator score for a batch of input images<a class="headerlink" href="#compute-generator-score-for-a-batch-of-input-images" title="Link to this heading">#</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">generator</span><span class="p">(</span><span class="n">noise_dim</span><span class="o">=</span><span class="n">NOISE_DIM</span><span class="p">):</span>
@@ -782,7 +804,7 @@ document.write(`
 </div>
 </section>
 <section id="compute-the-discriminator-loss">
-<h3><span class="section-number">1.5.9. </span>Compute the discriminator loss<a class="headerlink" href="#compute-the-discriminator-loss" title="Link to this heading">#</a></h3>
+<h3><span class="section-number">4.6.9. </span>Compute the discriminator loss<a class="headerlink" href="#compute-the-discriminator-loss" title="Link to this heading">#</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">discriminator_loss</span><span class="p">(</span><span class="n">logits_real</span><span class="p">,</span> <span class="n">logits_fake</span><span class="p">):</span>
@@ -815,7 +837,7 @@ document.write(`
 <p>The discriminator’s goal is to classify real samples as real (output close to 1) and generated samples as fake (output close to 0). Therefore, the discriminator’s loss function usually consists of two parts: the loss for real samples and the loss for generated samples, summed together.</p>
 </section>
 <section id="compute-the-generator-loss">
-<h3><span class="section-number">1.5.10. </span>Compute the generator loss<a class="headerlink" href="#compute-the-generator-loss" title="Link to this heading">#</a></h3>
+<h3><span class="section-number">4.6.10. </span>Compute the generator loss<a class="headerlink" href="#compute-the-generator-loss" title="Link to this heading">#</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">generator_loss</span><span class="p">(</span><span class="n">logits_fake</span><span class="p">):</span>
@@ -843,7 +865,7 @@ document.write(`
 <p>The generator’s loss function is typically the extent to which the generated samples are classified as real, the cross-entropy loss between the generator’s outputs and the target values (all 1).</p>
 </section>
 <section id="create-solvers-for-gan-training">
-<h3><span class="section-number">1.5.11. </span>Create solvers for GAN training<a class="headerlink" href="#create-solvers-for-gan-training" title="Link to this heading">#</a></h3>
+<h3><span class="section-number">4.6.11. </span>Create solvers for GAN training<a class="headerlink" href="#create-solvers-for-gan-training" title="Link to this heading">#</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">get_solvers</span><span class="p">(</span><span class="n">learning_rate</span><span class="o">=</span><span class="mf">1e-3</span><span class="p">,</span> <span class="n">beta1</span><span class="o">=</span><span class="mf">0.5</span><span class="p">):</span>
@@ -859,7 +881,7 @@ document.write(`
 </div>
 </section>
 <section id="train-a-gan-for-a-certain-number-of-epochs">
-<h3><span class="section-number">1.5.12. </span>Train a GAN for a certain number of epochs<a class="headerlink" href="#train-a-gan-for-a-certain-number-of-epochs" title="Link to this heading">#</a></h3>
+<h3><span class="section-number">4.6.12. </span>Train a GAN for a certain number of epochs<a class="headerlink" href="#train-a-gan-for-a-certain-number-of-epochs" title="Link to this heading">#</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">run_a_gan</span><span class="p">(</span><span class="n">D</span><span class="p">,</span> <span class="n">G</span><span class="p">,</span> <span class="n">D_solver</span><span class="p">,</span> <span class="n">G_solver</span><span class="p">,</span> <span class="n">discriminator_loss</span><span class="p">,</span> <span class="n">generator_loss</span><span class="p">,</span>\
@@ -982,12 +1004,12 @@ document.write(`
 </section>
 </section>
 <section id="your-turn">
-<h2><span class="section-number">1.6. </span>Your turn! 🚀<a class="headerlink" href="#your-turn" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">4.7. </span>Your turn! 🚀<a class="headerlink" href="#your-turn" title="Link to this heading">#</a></h2>
 <p>Implement TODO part of the code in this notebook.</p>
 <p>Assignment - <a class="reference internal" href="../assignments/art-by-gan.html"><span class="std std-doc">Art by gan</span></a></p>
 </section>
 <section id="acknowledgments">
-<h2><span class="section-number">1.7. </span>Acknowledgments<a class="headerlink" href="#acknowledgments" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">4.8. </span>Acknowledgments<a class="headerlink" href="#acknowledgments" title="Link to this heading">#</a></h2>
 <p>Thanks to <a class="reference external" href="https://github.com/rasbt">Sebastian Raschka</a> for creating the open-source project <a class="reference external" href="https://github.com/rasbt/stat453-deep-learning-ss20">stat453-deep-learning-ss20</a> and <a class="reference external" href="https://github.com/diegoalejogm">Diego Gomez</a> for creating the open-source project <a class="reference external" href="https://github.com/diegoalejogm/gans">gans</a>. They inspire the majority of the content in this chapter.</p>
 </section>
 </section>
@@ -1023,12 +1045,12 @@ document.write(`
                   
 <div class="prev-next-area">
     <a class="left-prev"
-       href="../../index.html"
+       href="../pre/python-programming-advanced.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">Welcome to your Jupyter Book</p>
+        <p class="prev-next-title"><span class="section-number">3. </span>Python programming advanced</p>
       </div>
     </a>
     <a class="right-next"
@@ -1036,7 +1058,7 @@ document.write(`
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title"><span class="section-number">2. </span>Diffusion Model</p>
+        <p class="prev-next-title"><span class="section-number">5. </span>Diffusion Model</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -1056,27 +1078,28 @@ document.write(`
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#overview">1.1. Overview</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#basic-principle">1.2. Basic Principle</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#mathematically-modeling">1.3. Mathematically Modeling</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#training-a-gan">1.4. Training a GAN</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#code">1.5. Code</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#function-of-displaying-a-grid-of-images">1.5.1. Function of displaying a grid of images</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#functions-of-pre-processing-and-post-processing-images">1.5.2. Functions of pre-processing and post-processing images</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#download-a-file-from-a-url-using-the-requests-library">1.5.3. Download a file from a URL using the requests library</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#load-data">1.5.4. Load Data</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#compute-the-leaky-relu-activation-function">1.5.5. Compute the leaky ReLU activation function</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#generate-random-uniform-noise-from-1-to-1">1.5.6. Generate random uniform noise from -1 to 1</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#compute-discriminator-score-for-a-batch-of-input-images">1.5.7. Compute discriminator score for a batch of input images</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#compute-generator-score-for-a-batch-of-input-images">1.5.8. Compute generator score for a batch of input images</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#compute-the-discriminator-loss">1.5.9. Compute the discriminator loss</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#compute-the-generator-loss">1.5.10. Compute the generator loss</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#create-solvers-for-gan-training">1.5.11. Create solvers for GAN training</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#train-a-gan-for-a-certain-number-of-epochs">1.5.12. Train a GAN for a certain number of epochs</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#overview">4.1. Overview</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#basic-principle">4.2. Basic Principle</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#mathematically-modeling">4.3. Mathematically Modeling</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#training-a-gan">4.4. Training a GAN</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#explore-generative-adversarial-nets">4.5. Explore Generative Adversarial Nets</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#code">4.6. Code</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#function-of-displaying-a-grid-of-images">4.6.1. Function of displaying a grid of images</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#functions-of-pre-processing-and-post-processing-images">4.6.2. Functions of pre-processing and post-processing images</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#download-a-file-from-a-url-using-the-requests-library">4.6.3. Download a file from a URL using the requests library</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#load-data">4.6.4. Load Data</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#compute-the-leaky-relu-activation-function">4.6.5. Compute the leaky ReLU activation function</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#generate-random-uniform-noise-from-1-to-1">4.6.6. Generate random uniform noise from -1 to 1</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#compute-discriminator-score-for-a-batch-of-input-images">4.6.7. Compute discriminator score for a batch of input images</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#compute-generator-score-for-a-batch-of-input-images">4.6.8. Compute generator score for a batch of input images</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#compute-the-discriminator-loss">4.6.9. Compute the discriminator loss</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#compute-the-generator-loss">4.6.10. Compute the generator loss</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#create-solvers-for-gan-training">4.6.11. Create solvers for GAN training</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#train-a-gan-for-a-certain-number-of-epochs">4.6.12. Train a GAN for a certain number of epochs</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#your-turn">1.6. Your turn! 🚀</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#acknowledgments">1.7. Acknowledgments</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#your-turn">4.7. Your turn! 🚀</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#acknowledgments">4.8. Acknowledgments</a></li>
 </ul>
   </nav></div>
 

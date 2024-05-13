@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>4. Art by gan &#8212; Image generation learning book</title>
+    <title>11. Art by gan &#8212; Image generation learning book</title>
   
   
   
@@ -62,8 +62,8 @@
     <link rel="icon" href="../../_static/fav.ico"/>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="6. Summary" href="denoising-difussion-model.html" />
-    <link rel="prev" title="2. Diffusion Model" href="../generation-model/diffusion-model.html" />
+    <link rel="next" title="13. Denoising Diffusion Models" href="denoising-difussion-model.html" />
+    <link rel="prev" title="10. Python programming advanced" href="python-programming-advanced.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -170,17 +170,31 @@
  </script></div>
         <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item navbar-nav active">
-        <p aria-level="2" class="caption" role="heading"><span class="caption-text">IMAGE GENERATION MODEL</span></p>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">PREREQUISITES</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="../generation-model/gan.html">1. Generative adversarial networks</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../generation-model/diffusion-model.html">2. Diffusion Model</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../pre/python-programming-introduction.html">1. Python programming introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../pre/python-programming-basics.html">2. Python programming basics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../pre/python-programming-advanced.html">3. Python programming advanced</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">IMAGE GENERATION MODEL</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../generation-model/gan.html">4. Generative adversarial networks</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../generation-model/diffusion-model.html">5. Diffusion Model</a></li>
 
+<li class="toctree-l1 has-children"><a class="reference internal" href="../generation-model/autoencoder.html">7. AUTOENCODERS</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../generation-model/vae.html">7.7. Variational Autoencoder</a></li>
+</ul>
+</li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">ASSIGNMENTS</span></p>
 <ul class="current nav bd-sidenav">
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">4. Art by gan</a></li>
+<li class="toctree-l1"><a class="reference internal" href="python-programming-introduction.html">8. Python programming introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="python-programming-basics.html">9. Python programming basics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="python-programming-advanced.html">10. Python programming advanced</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">11. Art by gan</a></li>
 
-<li class="toctree-l1"><a class="reference internal" href="denoising-difussion-model.html">6. Summary</a></li>
+<li class="toctree-l1"><a class="reference internal" href="denoising-difussion-model.html">13. Denoising Diffusion Models</a></li>
+<li class="toctree-l1"><a class="reference internal" href="base-denoising-autoencoder-dimension-reduction.html">14. Base/Denoising Autoencoder &amp; Dimension Reduction</a></li>
 </ul>
 
     </div>
@@ -442,23 +456,23 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">4. Art by gan</a><ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#data-loading-prepreprocessing">4.1. Data loading &amp; Prepreprocessing</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#loading-the-data">4.2. Loading the data</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#preprocessing-the-data">4.3. Preprocessing the data</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#building-gan">4.4. Building GAN</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-generator">4.5. The generator</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#building-a-generator">4.6. Building a generator</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-discriminator">4.7. The discriminator</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#building-a-discriminator">4.8. Building a discriminator</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#gan-compilation">4.9. GAN compilation</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#training-the-model">4.10. Training the model</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ploting-the-learning-curves">4.11. Ploting the Learning Curves</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ai-makes-artwork">4.12. AI makes artwork</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#conculsion">4.13. Conculsion</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">11. Art by gan</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#data-loading-prepreprocessing">11.1. Data loading &amp; Prepreprocessing</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#loading-the-data">11.2. Loading the data</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#preprocessing-the-data">11.3. Preprocessing the data</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#building-gan">11.4. Building GAN</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-generator">11.5. The generator</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#building-a-generator">11.6. Building a generator</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-discriminator">11.7. The discriminator</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#building-a-discriminator">11.8. Building a discriminator</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#gan-compilation">11.9. GAN compilation</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#training-the-model">11.10. Training the model</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ploting-the-learning-curves">11.11. Ploting the Learning Curves</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ai-makes-artwork">11.12. AI makes artwork</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#conculsion">11.13. Conculsion</a></li>
 </ul>
 </li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#acknowledgments">5. Acknowledgments</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#acknowledgments">12. Acknowledgments</a></li>
 </ul>
 
             </nav>
@@ -472,7 +486,7 @@ document.write(`
                 <article class="bd-article">
                   
   <section class="tex2jax_ignore mathjax_ignore" id="art-by-gan">
-<h1><span class="section-number">4. </span>Art by gan<a class="headerlink" href="#art-by-gan" title="Link to this heading">#</a></h1>
+<h1><span class="section-number">11. </span>Art by gan<a class="headerlink" href="#art-by-gan" title="Link to this heading">#</a></h1>
 <p>In this Notebook, we will build a Generative Adversarial Network  (GAN) to illustrate the workings of a Generative Adversarial Network and to generate images. Generative modelling is an unsupervised learning task in machine learning that involves automatically discovering and learning the regularities or patterns in input data. As GANs work by identifying the patterns in the data, we will be using oil painted portraits. However, glancing over the dataset gives me an idea that it is going to be a long shot. The orientation and poses in the dataset vary vastly. Keeping that in mind we are still willing to give it a try. Only because portraits are our jam. We basically love oil painted portraits.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -509,11 +523,11 @@ document.write(`
 </div>
 </div>
 <section id="data-loading-prepreprocessing">
-<h2><span class="section-number">4.1. </span>Data loading &amp; Prepreprocessing<a class="headerlink" href="#data-loading-prepreprocessing" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">11.1. </span>Data loading &amp; Prepreprocessing<a class="headerlink" href="#data-loading-prepreprocessing" title="Link to this heading">#</a></h2>
 <p>For this project, We are using .jpg files of images of portraits. The dataset includes various artists. We are loading data as TensorFlow.Dataset, with a batch size of 64. We have reduced the image size to (64,64), presuming, it will be computationally less taxing on the GPU.</p>
 </section>
 <section id="loading-the-data">
-<h2><span class="section-number">4.2. </span>Loading the data<a class="headerlink" href="#loading-the-data" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">11.2. </span>Loading the data<a class="headerlink" href="#loading-the-data" title="Link to this heading">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">os</span>
@@ -589,7 +603,7 @@ ZIP File successfully unzipped
 </div><p>Most of the images are portraits. A portrait is a painting representation of a person, The face is predominantly depicted portraits along with expressions and postures. To represent the personality of the subject. Since our model is relative a smaller GAN we have reduced the size of the image.</p>
 </section>
 <section id="preprocessing-the-data">
-<h2><span class="section-number">4.3. </span>Preprocessing the data<a class="headerlink" href="#preprocessing-the-data" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">11.3. </span>Preprocessing the data<a class="headerlink" href="#preprocessing-the-data" title="Link to this heading">#</a></h2>
 <p><strong>Normalization:</strong> For the data normalization, we will convert the data in the range between 0 to 1. This helps in fast convergence and makes it easy for the computer to do calculations faster.
 Each of the three RGB channels in the image can take pixel values ranging from 0 to 256. Dividing it by 255 converts it to a range between 0 to 1.</p>
 <div class="cell docutils container">
@@ -613,7 +627,7 @@ Each of the three RGB channels in the image can take pixel values ranging from 0
 </div><p>Now the data is up as a tensorflow Dataset object and is Prepocessed. Next up is building the GAN.</p>
 </section>
 <section id="building-gan">
-<h2><span class="section-number">4.4. </span>Building GAN<a class="headerlink" href="#building-gan" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">11.4. </span>Building GAN<a class="headerlink" href="#building-gan" title="Link to this heading">#</a></h2>
 <p>GANs employs deep learning methods. It is a dexterous way of posing the problem as a supervised learning problem. It is composed of two models namely Generator and a Discriminator.</p>
 <p>Two models are trained simultaneously by an adversarial process. A generator (“the artist”) learns to create images that look like the dataset while a discriminator (“the art critic”) learns to tell real images apart from fakes.</p>
 <p>During training, the generator progressively becomes better at creating images that look real, while the discriminator becomes better at telling them apart. The process reaches equilibrium when the discriminator can no longer distinguish real images from fakes.</p>
@@ -624,7 +638,7 @@ Each of the three RGB channels in the image can take pixel values ranging from 0
 </ul>
 </section>
 <section id="the-generator">
-<h2><span class="section-number">4.5. </span>The generator<a class="headerlink" href="#the-generator" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">11.5. </span>The generator<a class="headerlink" href="#the-generator" title="Link to this heading">#</a></h2>
 <p>The Generator is a neural network that generates the images. It takes in a random noise as seed and outputs sample data. As the GAN’s training progresses the Generator output becomes more and more like the training set, as the Generator tries to improve the output so that the discrimination passes the output as a real image.</p>
 <p><strong>Following steps are involved in the models building</strong></p>
 <ul class="simple">
@@ -633,7 +647,7 @@ Each of the three RGB channels in the image can take pixel values ranging from 0
 </ul>
 </section>
 <section id="building-a-generator">
-<h2><span class="section-number">4.6. </span>Building a generator<a class="headerlink" href="#building-a-generator" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">11.6. </span>Building a generator<a class="headerlink" href="#building-a-generator" title="Link to this heading">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">latent_dim</span> <span class="o">=</span> <span class="mi">100</span>
@@ -752,12 +766,12 @@ _________________________________________________________________
 </div><p>Clearly, the output is a random seed containing noise as the Generator is not trained yet.</p>
 </section>
 <section id="the-discriminator">
-<h2><span class="section-number">4.7. </span>The discriminator<a class="headerlink" href="#the-discriminator" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">11.7. </span>The discriminator<a class="headerlink" href="#the-discriminator" title="Link to this heading">#</a></h2>
 <p>In GANs the Generator works along with the Discriminator.</p>
 <p>The Discriminator network decided whether the data is fake aka created by the Generator or real i.e. from the original input data. To do so it applies a binary classification method using a sigmoid function to get an output in the range of 0 to 1.</p>
 </section>
 <section id="building-a-discriminator">
-<h2><span class="section-number">4.8. </span>Building a discriminator<a class="headerlink" href="#building-a-discriminator" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">11.8. </span>Building a discriminator<a class="headerlink" href="#building-a-discriminator" title="Link to this heading">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">discriminator</span> <span class="o">=</span> <span class="n">Sequential</span><span class="p">()</span>
@@ -877,7 +891,7 @@ _________________________________________________________________
 <p>Let us proceed and build the GAN architecture to train.</p>
 </section>
 <section id="gan-compilation">
-<h2><span class="section-number">4.9. </span>GAN compilation<a class="headerlink" href="#gan-compilation" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">11.9. </span>GAN compilation<a class="headerlink" href="#gan-compilation" title="Link to this heading">#</a></h2>
 <p>GAN training has two sections:</p>
 <p><strong>Section 1</strong>: The Discriminator is trained while the Generator is idle.
 The discriminator is trained real images and random noise (from an untrained generator). This trains it to tell between fake and real. This accommodates the discriminator to predict as fakes.</p>
@@ -958,7 +972,7 @@ The discriminator is trained real images and random noise (from an untrained gen
 </details>
 </div></section>
 <section id="training-the-model">
-<h2><span class="section-number">4.10. </span>Training the model<a class="headerlink" href="#training-the-model" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">11.10. </span>Training the model<a class="headerlink" href="#training-the-model" title="Link to this heading">#</a></h2>
 <p>Calling the above created GAN function trains the generator and discriminator simultaneously.
 To implement the GAN we must define:</p>
 <ul class="simple">
@@ -1021,7 +1035,7 @@ Epoch 10/10
 </details>
 </div></section>
 <section id="ploting-the-learning-curves">
-<h2><span class="section-number">4.11. </span>Ploting the Learning Curves<a class="headerlink" href="#ploting-the-learning-curves" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">11.11. </span>Ploting the Learning Curves<a class="headerlink" href="#ploting-the-learning-curves" title="Link to this heading">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
@@ -1038,7 +1052,7 @@ Epoch 10/10
 To get the art output we will create a function that saves the output portraits generated. We will be plotting the generated Portraits</p>
 </section>
 <section id="ai-makes-artwork">
-<h2><span class="section-number">4.12. </span>AI makes artwork<a class="headerlink" href="#ai-makes-artwork" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">11.12. </span>AI makes artwork<a class="headerlink" href="#ai-makes-artwork" title="Link to this heading">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Number of images to be generate</span>
@@ -1088,12 +1102,12 @@ To get the art output we will create a function that saves the output portraits 
 </div>
 </section>
 <section id="conculsion">
-<h2><span class="section-number">4.13. </span>Conculsion<a class="headerlink" href="#conculsion" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">11.13. </span>Conculsion<a class="headerlink" href="#conculsion" title="Link to this heading">#</a></h2>
 <p>In the evaluation of the model: We can see that the GAN picked up the patterns in the portraits. It worked quite well. For further improvement,  as GANs are notorious for being data-hungry, I would consider increasing the dataset. There are many inconsistencies in the data which is rather complicated for the GAN to learn. Cleaning the data with some consistencies in the portrait styles would certainly help. Training it longer i.e. for more epochs would also help. Lastly, one can always strive to make a  more robust architecture for the Neural Networks.</p>
 </section>
 </section>
 <section class="tex2jax_ignore mathjax_ignore" id="acknowledgments">
-<h1><span class="section-number">5. </span>Acknowledgments<a class="headerlink" href="#acknowledgments" title="Link to this heading">#</a></h1>
+<h1><span class="section-number">12. </span>Acknowledgments<a class="headerlink" href="#acknowledgments" title="Link to this heading">#</a></h1>
 <p>Thanks to <a class="reference external" href="https://www.kaggle.com/karnikakapoor">Karnika Kapoor</a> for creating <a class="reference external" href="https://www.kaggle.com/code/karnikakapoor/art-by-gan">art-by-gan</a>. It inspires the majority of the content in this chapter.</p>
 </section>
 
@@ -1128,12 +1142,12 @@ To get the art output we will create a function that saves the output portraits 
                   
 <div class="prev-next-area">
     <a class="left-prev"
-       href="../generation-model/diffusion-model.html"
+       href="python-programming-advanced.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title"><span class="section-number">2. </span>Diffusion Model</p>
+        <p class="prev-next-title"><span class="section-number">10. </span>Python programming advanced</p>
       </div>
     </a>
     <a class="right-next"
@@ -1141,7 +1155,7 @@ To get the art output we will create a function that saves the output portraits 
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title"><span class="section-number">6. </span>Summary</p>
+        <p class="prev-next-title"><span class="section-number">13. </span>Denoising Diffusion Models</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -1161,23 +1175,23 @@ To get the art output we will create a function that saves the output portraits 
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">4. Art by gan</a><ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#data-loading-prepreprocessing">4.1. Data loading &amp; Prepreprocessing</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#loading-the-data">4.2. Loading the data</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#preprocessing-the-data">4.3. Preprocessing the data</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#building-gan">4.4. Building GAN</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-generator">4.5. The generator</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#building-a-generator">4.6. Building a generator</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-discriminator">4.7. The discriminator</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#building-a-discriminator">4.8. Building a discriminator</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#gan-compilation">4.9. GAN compilation</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#training-the-model">4.10. Training the model</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ploting-the-learning-curves">4.11. Ploting the Learning Curves</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ai-makes-artwork">4.12. AI makes artwork</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#conculsion">4.13. Conculsion</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">11. Art by gan</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#data-loading-prepreprocessing">11.1. Data loading &amp; Prepreprocessing</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#loading-the-data">11.2. Loading the data</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#preprocessing-the-data">11.3. Preprocessing the data</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#building-gan">11.4. Building GAN</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-generator">11.5. The generator</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#building-a-generator">11.6. Building a generator</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-discriminator">11.7. The discriminator</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#building-a-discriminator">11.8. Building a discriminator</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#gan-compilation">11.9. GAN compilation</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#training-the-model">11.10. Training the model</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ploting-the-learning-curves">11.11. Ploting the Learning Curves</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ai-makes-artwork">11.12. AI makes artwork</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#conculsion">11.13. Conculsion</a></li>
 </ul>
 </li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#acknowledgments">5. Acknowledgments</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#acknowledgments">12. Acknowledgments</a></li>
 </ul>
 
   </nav></div>
