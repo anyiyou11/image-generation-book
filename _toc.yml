@@ -15,6 +15,7 @@ parts:
   chapters:
   - file: book/generation-model/gan
   - file: book/generation-model/diffusion-model
+  - file: book/generation-model/sd
   - file: book/generation-model/autoencoder
     sections:
     - file: book/generation-model/vae
