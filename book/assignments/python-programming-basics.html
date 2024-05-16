@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>9. Python programming basics &#8212; Image generation learning book</title>
+    <title>10. Python programming basics &#8212; Image generation learning book</title>
   
   
   
@@ -64,8 +64,8 @@
     <link rel="icon" href="../../_static/fav.ico"/>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="10. Python programming advanced" href="python-programming-advanced.html" />
-    <link rel="prev" title="8. Python programming introduction" href="python-programming-introduction.html" />
+    <link rel="next" title="11. Python programming advanced" href="python-programming-advanced.html" />
+    <link rel="prev" title="9. Python programming introduction" href="python-programming-introduction.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -183,20 +183,21 @@
 <li class="toctree-l1"><a class="reference internal" href="../generation-model/gan.html">4. Generative adversarial networks</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../generation-model/diffusion-model.html">5. Diffusion Model</a></li>
 
-<li class="toctree-l1 has-children"><a class="reference internal" href="../generation-model/autoencoder.html">7. AUTOENCODERS</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul>
-<li class="toctree-l2"><a class="reference internal" href="../generation-model/vae.html">7.7. Variational Autoencoder</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../generation-model/sd.html">7. Stable Diffusion Model</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../generation-model/autoencoder.html">8. Autoencoder</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../generation-model/vae.html">8.7. Variational Autoencoder</a></li>
 </ul>
 </li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">ASSIGNMENTS</span></p>
 <ul class="current nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="python-programming-introduction.html">8. Python programming introduction</a></li>
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">9. Python programming basics</a></li>
-<li class="toctree-l1"><a class="reference internal" href="python-programming-advanced.html">10. Python programming advanced</a></li>
-<li class="toctree-l1"><a class="reference internal" href="art-by-gan.html">11. Art by gan</a></li>
+<li class="toctree-l1"><a class="reference internal" href="python-programming-introduction.html">9. Python programming introduction</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">10. Python programming basics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="python-programming-advanced.html">11. Python programming advanced</a></li>
+<li class="toctree-l1"><a class="reference internal" href="art-by-gan.html">12. Art by gan</a></li>
 
-<li class="toctree-l1"><a class="reference internal" href="denoising-difussion-model.html">13. Denoising Diffusion Models</a></li>
-<li class="toctree-l1"><a class="reference internal" href="base-denoising-autoencoder-dimension-reduction.html">14. Base/Denoising Autoencoder &amp; Dimension Reduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="denoising-difussion-model.html">14. Denoising Diffusion Models</a></li>
+<li class="toctree-l1"><a class="reference internal" href="base-denoising-autoencoder-dimension-reduction.html">15. Base/Denoising Autoencoder &amp; Dimension Reduction</a></li>
 </ul>
 
     </div>
@@ -458,39 +459,39 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#operators">9.1. Operators</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#implement-a-function-to-generate-the-fibonacci-sequence-up-to-a-specified-number-of-terms">9.1.1. Implement a function to generate the Fibonacci sequence up to a specified number of terms.</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#implement-a-function-for-insertion-sort-to-sort-a-list-in-ascending-order">9.1.2. Implement a function for insertion sort to sort a list in ascending order.</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#implement-a-function-to-calculate-the-square-root-of-a-number-using-the-babylonian-method">9.1.3. Implement a function to calculate the square root of a number using the Babylonian method.</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#operators">10.1. Operators</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#implement-a-function-to-generate-the-fibonacci-sequence-up-to-a-specified-number-of-terms">10.1.1. Implement a function to generate the Fibonacci sequence up to a specified number of terms.</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#implement-a-function-for-insertion-sort-to-sort-a-list-in-ascending-order">10.1.2. Implement a function for insertion sort to sort a list in ascending order.</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#implement-a-function-to-calculate-the-square-root-of-a-number-using-the-babylonian-method">10.1.3. Implement a function to calculate the square root of a number using the Babylonian method.</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#string">9.2. String</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#str-upper">9.2.1. str.upper</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#str-title">9.2.2. str.title</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#str-replace">9.2.3. str.replace</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#str-format-str-join">9.2.4. str.format str.join</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#str-split">9.2.5. str.split</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#string">10.2. String</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#str-upper">10.2.1. str.upper</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#str-title">10.2.2. str.title</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#str-replace">10.2.3. str.replace</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#str-format-str-join">10.2.4. str.format str.join</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#str-split">10.2.5. str.split</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#numbers">9.3. Numbers</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#creating-formulas">9.3.1. Creating formulas</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#numbers">10.3. Numbers</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#creating-formulas">10.3.1. Creating formulas</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#lists">9.4. Lists</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#list-append-list-remove-mutable">9.4.1. list.append, list.remove, mutable</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#slice">9.4.2. Slice</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#list-extend">9.4.3. list.extend</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#lists">10.4. Lists</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#list-append-list-remove-mutable">10.4.1. list.append, list.remove, mutable</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#slice">10.4.2. Slice</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#list-extend">10.4.3. list.extend</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dictionaries">9.5. Dictionaries</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#populating-a-dictionary">9.5.1. Populating a dictionary</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#removing-duplicate-values-from-a-dictionary-using-del">9.5.2. Removing Duplicate Values from a Dictionary using ‘del’</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#counting-occurrences-of-elements-using-dict-get">9.5.3. Counting Occurrences of Elements using dict.get()</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#grouping-items-by-category-using-dict-setdefault">9.5.4. Grouping Items by Category using dict.setdefault()</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#accessing-and-merging-dictionaries-into-a-single-dictionary">9.5.5. Accessing and Merging Dictionaries into a Single Dictionary</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dictionaries">10.5. Dictionaries</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#populating-a-dictionary">10.5.1. Populating a dictionary</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#removing-duplicate-values-from-a-dictionary-using-del">10.5.2. Removing Duplicate Values from a Dictionary using ‘del’</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#counting-occurrences-of-elements-using-dict-get">10.5.3. Counting Occurrences of Elements using dict.get()</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#grouping-items-by-category-using-dict-setdefault">10.5.4. Grouping Items by Category using dict.setdefault()</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#accessing-and-merging-dictionaries-into-a-single-dictionary">10.5.5. Accessing and Merging Dictionaries into a Single Dictionary</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#acknowledgments">9.6. Acknowledgments</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#acknowledgments">10.6. Acknowledgments</a></li>
 </ul>
             </nav>
         </div>
@@ -521,7 +522,7 @@ LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.</p>
 </details><section class="tex2jax_ignore mathjax_ignore" id="python-programming-basics">
-<h1><span class="section-number">9. </span>Python programming basics<a class="headerlink" href="#python-programming-basics" title="Link to this heading">#</a></h1>
+<h1><span class="section-number">10. </span>Python programming basics<a class="headerlink" href="#python-programming-basics" title="Link to this heading">#</a></h1>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># set up the env</span>
@@ -536,9 +537,9 @@ SOFTWARE.</p>
 </div>
 </div>
 <section id="operators">
-<h2><span class="section-number">9.1. </span>Operators<a class="headerlink" href="#operators" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">10.1. </span>Operators<a class="headerlink" href="#operators" title="Link to this heading">#</a></h2>
 <section id="implement-a-function-to-generate-the-fibonacci-sequence-up-to-a-specified-number-of-terms">
-<h3><span class="section-number">9.1.1. </span>Implement a function to generate the Fibonacci sequence up to a specified number of terms.<a class="headerlink" href="#implement-a-function-to-generate-the-fibonacci-sequence-up-to-a-specified-number-of-terms" title="Link to this heading">#</a></h3>
+<h3><span class="section-number">10.1.1. </span>Implement a function to generate the Fibonacci sequence up to a specified number of terms.<a class="headerlink" href="#implement-a-function-to-generate-the-fibonacci-sequence-up-to-a-specified-number-of-terms" title="Link to this heading">#</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">fibonacci</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
@@ -620,7 +621,7 @@ class TestFibonacci:
 </details>
 </div></section>
 <section id="implement-a-function-for-insertion-sort-to-sort-a-list-in-ascending-order">
-<h3><span class="section-number">9.1.2. </span>Implement a function for insertion sort to sort a list in ascending order.<a class="headerlink" href="#implement-a-function-for-insertion-sort-to-sort-a-list-in-ascending-order" title="Link to this heading">#</a></h3>
+<h3><span class="section-number">10.1.2. </span>Implement a function for insertion sort to sort a list in ascending order.<a class="headerlink" href="#implement-a-function-for-insertion-sort-to-sort-a-list-in-ascending-order" title="Link to this heading">#</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">insertion_sort</span><span class="p">(</span><span class="n">arr</span><span class="p">):</span>
@@ -716,7 +717,7 @@ class TestInsertionSort:
 </details>
 </div></section>
 <section id="implement-a-function-to-calculate-the-square-root-of-a-number-using-the-babylonian-method">
-<h3><span class="section-number">9.1.3. </span>Implement a function to calculate the square root of a number using the Babylonian method.<a class="headerlink" href="#implement-a-function-to-calculate-the-square-root-of-a-number-using-the-babylonian-method" title="Link to this heading">#</a></h3>
+<h3><span class="section-number">10.1.3. </span>Implement a function to calculate the square root of a number using the Babylonian method.<a class="headerlink" href="#implement-a-function-to-calculate-the-square-root-of-a-number-using-the-babylonian-method" title="Link to this heading">#</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Inspired by SICP http://mitpress.mit.edu/sicp/full-text/book/book-Z-H-10.html#%_sec_1.1.7</span>
@@ -813,9 +814,9 @@ class TestSqrt:
 </div></section>
 </section>
 <section id="string">
-<h2><span class="section-number">9.2. </span>String<a class="headerlink" href="#string" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">10.2. </span>String<a class="headerlink" href="#string" title="Link to this heading">#</a></h2>
 <section id="str-upper">
-<h3><span class="section-number">9.2.1. </span>str.upper<a class="headerlink" href="#str-upper" title="Link to this heading">#</a></h3>
+<h3><span class="section-number">10.2.1. </span>str.upper<a class="headerlink" href="#str-upper" title="Link to this heading">#</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">capitalize_first_letter</span><span class="p">(</span><span class="n">string</span><span class="p">):</span>
@@ -891,7 +892,7 @@ class TestCapitalizeFirstLetterper(unittest.TestCase):
 </details>
 </div></section>
 <section id="str-title">
-<h3><span class="section-number">9.2.2. </span>str.title<a class="headerlink" href="#str-title" title="Link to this heading">#</a></h3>
+<h3><span class="section-number">10.2.2. </span>str.title<a class="headerlink" href="#str-title" title="Link to this heading">#</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">capitalize_words</span><span class="p">(</span><span class="n">sentence</span><span class="p">,</span> <span class="n">exclude_words</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
@@ -975,7 +976,7 @@ class TestCapitalizeWords(unittest.TestCase):
 </details>
 </div></section>
 <section id="str-replace">
-<h3><span class="section-number">9.2.3. </span>str.replace<a class="headerlink" href="#str-replace" title="Link to this heading">#</a></h3>
+<h3><span class="section-number">10.2.3. </span>str.replace<a class="headerlink" href="#str-replace" title="Link to this heading">#</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">censor_words</span><span class="p">(</span><span class="n">sentence</span><span class="p">,</span> <span class="n">words</span><span class="p">):</span>
@@ -1060,7 +1061,7 @@ class TestCensorWords:
 </details>
 </div></section>
 <section id="str-format-str-join">
-<h3><span class="section-number">9.2.4. </span>str.format str.join<a class="headerlink" href="#str-format-str-join" title="Link to this heading">#</a></h3>
+<h3><span class="section-number">10.2.4. </span>str.format str.join<a class="headerlink" href="#str-format-str-join" title="Link to this heading">#</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">format_person_info</span><span class="p">(</span><span class="n">people_info</span><span class="p">):</span>
@@ -1151,7 +1152,7 @@ class TestFormatPersonInfo:
 </details>
 </div></section>
 <section id="str-split">
-<h3><span class="section-number">9.2.5. </span>str.split<a class="headerlink" href="#str-split" title="Link to this heading">#</a></h3>
+<h3><span class="section-number">10.2.5. </span>str.split<a class="headerlink" href="#str-split" title="Link to this heading">#</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">string</span>
@@ -1268,9 +1269,9 @@ class TestCountWordOccurrences:
 </div></section>
 </section>
 <section id="numbers">
-<h2><span class="section-number">9.3. </span>Numbers<a class="headerlink" href="#numbers" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">10.3. </span>Numbers<a class="headerlink" href="#numbers" title="Link to this heading">#</a></h2>
 <section id="creating-formulas">
-<h3><span class="section-number">9.3.1. </span>Creating formulas<a class="headerlink" href="#creating-formulas" title="Link to this heading">#</a></h3>
+<h3><span class="section-number">10.3.1. </span>Creating formulas<a class="headerlink" href="#creating-formulas" title="Link to this heading">#</a></h3>
 <p>Write the following mathematical formula in Python:</p>
 <p><span class="math notranslate nohighlight">\(result = 6a^3 - \frac{8b^2 }{4c} + 11\)</span></p>
 <div class="cell docutils container">
@@ -1359,9 +1360,9 @@ class TestCalculate(unittest.TestCase):
 </section>
 </section>
 <section id="lists">
-<h2><span class="section-number">9.4. </span>Lists<a class="headerlink" href="#lists" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">10.4. </span>Lists<a class="headerlink" href="#lists" title="Link to this heading">#</a></h2>
 <section id="list-append-list-remove-mutable">
-<h3><span class="section-number">9.4.1. </span>list.append, list.remove, mutable<a class="headerlink" href="#list-append-list-remove-mutable" title="Link to this heading">#</a></h3>
+<h3><span class="section-number">10.4.1. </span>list.append, list.remove, mutable<a class="headerlink" href="#list-append-list-remove-mutable" title="Link to this heading">#</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">permutations</span><span class="p">(</span><span class="n">elements</span><span class="p">):</span>
@@ -1524,7 +1525,7 @@ class TestRemoveDuplicates:
 </details>
 </div></section>
 <section id="slice">
-<h3><span class="section-number">9.4.2. </span>Slice<a class="headerlink" href="#slice" title="Link to this heading">#</a></h3>
+<h3><span class="section-number">10.4.2. </span>Slice<a class="headerlink" href="#slice" title="Link to this heading">#</a></h3>
 <p>Create a new list without modifiying the original one.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1551,7 +1552,7 @@ class TestRemoveDuplicates:
 </div>
 </section>
 <section id="list-extend">
-<h3><span class="section-number">9.4.3. </span>list.extend<a class="headerlink" href="#list-extend" title="Link to this heading">#</a></h3>
+<h3><span class="section-number">10.4.3. </span>list.extend<a class="headerlink" href="#list-extend" title="Link to this heading">#</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">flatten_nested_lists</span><span class="p">(</span><span class="n">nested_lists</span><span class="p">):</span>
@@ -1632,9 +1633,9 @@ class TestFlattenNestedLists:
 </div></section>
 </section>
 <section id="dictionaries">
-<h2><span class="section-number">9.5. </span>Dictionaries<a class="headerlink" href="#dictionaries" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">10.5. </span>Dictionaries<a class="headerlink" href="#dictionaries" title="Link to this heading">#</a></h2>
 <section id="populating-a-dictionary">
-<h3><span class="section-number">9.5.1. </span>Populating a dictionary<a class="headerlink" href="#populating-a-dictionary" title="Link to this heading">#</a></h3>
+<h3><span class="section-number">10.5.1. </span>Populating a dictionary<a class="headerlink" href="#populating-a-dictionary" title="Link to this heading">#</a></h3>
 <p>Create a dictionary by using all the given variables.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1748,7 +1749,7 @@ class TestCountOccurrences:
 </details>
 </div></section>
 <section id="removing-duplicate-values-from-a-dictionary-using-del">
-<h3><span class="section-number">9.5.2. </span>Removing Duplicate Values from a Dictionary using ‘del’<a class="headerlink" href="#removing-duplicate-values-from-a-dictionary-using-del" title="Link to this heading">#</a></h3>
+<h3><span class="section-number">10.5.2. </span>Removing Duplicate Values from a Dictionary using ‘del’<a class="headerlink" href="#removing-duplicate-values-from-a-dictionary-using-del" title="Link to this heading">#</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">remove_duplicates</span><span class="p">(</span><span class="n">dictionary</span><span class="p">):</span>
@@ -1833,7 +1834,7 @@ class TestRemoveDuplicates:
 </details>
 </div></section>
 <section id="counting-occurrences-of-elements-using-dict-get">
-<h3><span class="section-number">9.5.3. </span>Counting Occurrences of Elements using dict.get()<a class="headerlink" href="#counting-occurrences-of-elements-using-dict-get" title="Link to this heading">#</a></h3>
+<h3><span class="section-number">10.5.3. </span>Counting Occurrences of Elements using dict.get()<a class="headerlink" href="#counting-occurrences-of-elements-using-dict-get" title="Link to this heading">#</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">count_occurrences</span><span class="p">(</span><span class="n">lst</span><span class="p">):</span>
@@ -1912,7 +1913,7 @@ class TestCountOccurrences:
 </details>
 </div></section>
 <section id="grouping-items-by-category-using-dict-setdefault">
-<h3><span class="section-number">9.5.4. </span>Grouping Items by Category using dict.setdefault()<a class="headerlink" href="#grouping-items-by-category-using-dict-setdefault" title="Link to this heading">#</a></h3>
+<h3><span class="section-number">10.5.4. </span>Grouping Items by Category using dict.setdefault()<a class="headerlink" href="#grouping-items-by-category-using-dict-setdefault" title="Link to this heading">#</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">group_by_category</span><span class="p">(</span><span class="n">items</span><span class="p">):</span>
@@ -2059,7 +2060,7 @@ class TestGroupByCategory:
 </details>
 </div></section>
 <section id="accessing-and-merging-dictionaries-into-a-single-dictionary">
-<h3><span class="section-number">9.5.5. </span>Accessing and Merging Dictionaries into a Single Dictionary<a class="headerlink" href="#accessing-and-merging-dictionaries-into-a-single-dictionary" title="Link to this heading">#</a></h3>
+<h3><span class="section-number">10.5.5. </span>Accessing and Merging Dictionaries into a Single Dictionary<a class="headerlink" href="#accessing-and-merging-dictionaries-into-a-single-dictionary" title="Link to this heading">#</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">merge_dicts</span><span class="p">(</span><span class="o">*</span><span class="n">dicts</span><span class="p">):</span>
@@ -2167,7 +2168,7 @@ class TestMergeDicts:
 </div></section>
 </section>
 <section id="acknowledgments">
-<h2><span class="section-number">9.6. </span>Acknowledgments<a class="headerlink" href="#acknowledgments" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">10.6. </span>Acknowledgments<a class="headerlink" href="#acknowledgments" title="Link to this heading">#</a></h2>
 <p>Thanks to below awesome open source projects for Python learning, which inspire this chapter.</p>
 <ul class="simple">
 <li><p><a class="reference external" href="https://github.com/trekhleb/learn-python">learn-python</a> and <a class="reference external" href="https://github.com/trekhleb">Oleksii Trekhleb</a></p></li>
@@ -2214,7 +2215,7 @@ class TestMergeDicts:
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title"><span class="section-number">8. </span>Python programming introduction</p>
+        <p class="prev-next-title"><span class="section-number">9. </span>Python programming introduction</p>
       </div>
     </a>
     <a class="right-next"
@@ -2222,7 +2223,7 @@ class TestMergeDicts:
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title"><span class="section-number">10. </span>Python programming advanced</p>
+        <p class="prev-next-title"><span class="section-number">11. </span>Python programming advanced</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -2242,39 +2243,39 @@ class TestMergeDicts:
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#operators">9.1. Operators</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#implement-a-function-to-generate-the-fibonacci-sequence-up-to-a-specified-number-of-terms">9.1.1. Implement a function to generate the Fibonacci sequence up to a specified number of terms.</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#implement-a-function-for-insertion-sort-to-sort-a-list-in-ascending-order">9.1.2. Implement a function for insertion sort to sort a list in ascending order.</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#implement-a-function-to-calculate-the-square-root-of-a-number-using-the-babylonian-method">9.1.3. Implement a function to calculate the square root of a number using the Babylonian method.</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#operators">10.1. Operators</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#implement-a-function-to-generate-the-fibonacci-sequence-up-to-a-specified-number-of-terms">10.1.1. Implement a function to generate the Fibonacci sequence up to a specified number of terms.</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#implement-a-function-for-insertion-sort-to-sort-a-list-in-ascending-order">10.1.2. Implement a function for insertion sort to sort a list in ascending order.</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#implement-a-function-to-calculate-the-square-root-of-a-number-using-the-babylonian-method">10.1.3. Implement a function to calculate the square root of a number using the Babylonian method.</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#string">9.2. String</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#str-upper">9.2.1. str.upper</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#str-title">9.2.2. str.title</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#str-replace">9.2.3. str.replace</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#str-format-str-join">9.2.4. str.format str.join</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#str-split">9.2.5. str.split</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#string">10.2. String</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#str-upper">10.2.1. str.upper</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#str-title">10.2.2. str.title</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#str-replace">10.2.3. str.replace</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#str-format-str-join">10.2.4. str.format str.join</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#str-split">10.2.5. str.split</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#numbers">9.3. Numbers</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#creating-formulas">9.3.1. Creating formulas</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#numbers">10.3. Numbers</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#creating-formulas">10.3.1. Creating formulas</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#lists">9.4. Lists</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#list-append-list-remove-mutable">9.4.1. list.append, list.remove, mutable</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#slice">9.4.2. Slice</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#list-extend">9.4.3. list.extend</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#lists">10.4. Lists</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#list-append-list-remove-mutable">10.4.1. list.append, list.remove, mutable</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#slice">10.4.2. Slice</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#list-extend">10.4.3. list.extend</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dictionaries">9.5. Dictionaries</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#populating-a-dictionary">9.5.1. Populating a dictionary</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#removing-duplicate-values-from-a-dictionary-using-del">9.5.2. Removing Duplicate Values from a Dictionary using ‘del’</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#counting-occurrences-of-elements-using-dict-get">9.5.3. Counting Occurrences of Elements using dict.get()</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#grouping-items-by-category-using-dict-setdefault">9.5.4. Grouping Items by Category using dict.setdefault()</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#accessing-and-merging-dictionaries-into-a-single-dictionary">9.5.5. Accessing and Merging Dictionaries into a Single Dictionary</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dictionaries">10.5. Dictionaries</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#populating-a-dictionary">10.5.1. Populating a dictionary</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#removing-duplicate-values-from-a-dictionary-using-del">10.5.2. Removing Duplicate Values from a Dictionary using ‘del’</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#counting-occurrences-of-elements-using-dict-get">10.5.3. Counting Occurrences of Elements using dict.get()</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#grouping-items-by-category-using-dict-setdefault">10.5.4. Grouping Items by Category using dict.setdefault()</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#accessing-and-merging-dictionaries-into-a-single-dictionary">10.5.5. Accessing and Merging Dictionaries into a Single Dictionary</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#acknowledgments">9.6. Acknowledgments</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#acknowledgments">10.6. Acknowledgments</a></li>
 </ul>
   </nav></div>
 

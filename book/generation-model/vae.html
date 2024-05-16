@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>7.7. Variational Autoencoder &#8212; Image generation learning book</title>
+    <title>8.7. Variational Autoencoder &#8212; Image generation learning book</title>
   
   
   
@@ -62,8 +62,8 @@
     <link rel="icon" href="../../_static/fav.ico"/>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="8. Python programming introduction" href="../assignments/python-programming-introduction.html" />
-    <link rel="prev" title="7. AUTOENCODERS" href="autoencoder.html" />
+    <link rel="next" title="9. Python programming introduction" href="../assignments/python-programming-introduction.html" />
+    <link rel="prev" title="8. Autoencoder" href="autoencoder.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -181,20 +181,21 @@
 <li class="toctree-l1"><a class="reference internal" href="gan.html">4. Generative adversarial networks</a></li>
 <li class="toctree-l1"><a class="reference internal" href="diffusion-model.html">5. Diffusion Model</a></li>
 
-<li class="toctree-l1 current active has-children"><a class="reference internal" href="autoencoder.html">7. AUTOENCODERS</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
-<li class="toctree-l2 current active"><a class="current reference internal" href="#">7.7. Variational Autoencoder</a></li>
+<li class="toctree-l1"><a class="reference internal" href="sd.html">7. Stable Diffusion Model</a></li>
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="autoencoder.html">8. Autoencoder</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">8.7. Variational Autoencoder</a></li>
 </ul>
 </li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">ASSIGNMENTS</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="../assignments/python-programming-introduction.html">8. Python programming introduction</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../assignments/python-programming-basics.html">9. Python programming basics</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../assignments/python-programming-advanced.html">10. Python programming advanced</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../assignments/art-by-gan.html">11. Art by gan</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../assignments/python-programming-introduction.html">9. Python programming introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../assignments/python-programming-basics.html">10. Python programming basics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../assignments/python-programming-advanced.html">11. Python programming advanced</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../assignments/art-by-gan.html">12. Art by gan</a></li>
 
-<li class="toctree-l1"><a class="reference internal" href="../assignments/denoising-difussion-model.html">13. Denoising Diffusion Models</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../assignments/base-denoising-autoencoder-dimension-reduction.html">14. Base/Denoising Autoencoder &amp; Dimension Reduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../assignments/denoising-difussion-model.html">14. Denoising Diffusion Models</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../assignments/base-denoising-autoencoder-dimension-reduction.html">15. Base/Denoising Autoencoder &amp; Dimension Reduction</a></li>
 </ul>
 
     </div>
@@ -456,9 +457,9 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#code">7.7.1. Code</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#your-turn">7.7.2. Your turn! 🚀</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#acknowledgments">7.7.3. Acknowledgments</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#code">8.7.1. Code</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#your-turn">8.7.2. Your turn! 🚀</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#acknowledgments">8.7.3. Acknowledgments</a></li>
 </ul>
             </nav>
         </div>
@@ -494,14 +495,14 @@ bibliography:</p>
 </ul>
 <hr class="docutils" />
 <section class="tex2jax_ignore mathjax_ignore" id="variational-autoencoder">
-<h1><span class="section-number">7.7. </span>Variational Autoencoder<a class="headerlink" href="#variational-autoencoder" title="Link to this heading">#</a></h1>
+<h1><span class="section-number">8.7. </span>Variational Autoencoder<a class="headerlink" href="#variational-autoencoder" title="Link to this heading">#</a></h1>
 <img src="https://static-1300131294.cos.ap-shanghai.myqcloud.com/images/deep-learning/VAE/vae-gaussian.png"><p>We’re trying to build a generative model here, not just a fuzzy data structure that can “memorize” images. We can’t generate anything yet, since we don’t know how to create latent vectors other than encoding them from images.</p>
 <p>There’s a simple solution here. We add a constraint on the encoding network, that forces it to generate latent vectors that roughly follow a unit gaussian distribution. It is this constraint that separates a variational autoencoder from a standard one.</p>
 <p>Generating new images is now easy: all we need to do is sample a latent vector from the unit gaussian and pass it into the decoder.</p>
 <p>In practice, there’s a tradeoff between how accurate our network can be and how close its latent variables can match the unit gaussian distribution.</p>
 <p>We let the network decide this itself. For our loss term, we sum up two separate losses: the generative loss, which is a mean squared error that measures how accurately the network reconstructed the images, and a latent loss, which is the KL divergence that measures how closely the latent variables match a unit gaussian. <a class="reference external" href="http://kvfrans.com/variational-autoencoders-explained/">ref</a></p>
 <section id="code">
-<h2><span class="section-number">7.7.1. </span>Code<a class="headerlink" href="#code" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">8.7.1. </span>Code<a class="headerlink" href="#code" title="Link to this heading">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
@@ -1914,11 +1915,11 @@ Epoch 50/50
 <p>Looks like by using the decoder on noisy data we can generate a completely new data!</p>
 </section>
 <section id="your-turn">
-<h2><span class="section-number">7.7.2. </span>Your turn! 🚀<a class="headerlink" href="#your-turn" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">8.7.2. </span>Your turn! 🚀<a class="headerlink" href="#your-turn" title="Link to this heading">#</a></h2>
 <p>Assignment - <a class="reference internal" href="../assignments/denoising-difussion-model.html"><span class="std std-doc">Denoising difussion model</span></a></p>
 </section>
 <section id="acknowledgments">
-<h2><span class="section-number">7.7.3. </span>Acknowledgments<a class="headerlink" href="#acknowledgments" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">8.7.3. </span>Acknowledgments<a class="headerlink" href="#acknowledgments" title="Link to this heading">#</a></h2>
 <p>Thanks to <a class="reference external" href="https://github.com/lordsoffallen">Fazil T</a> for creating the open-source project <a class="reference external" href="https://www.kaggle.com/">kaggle</a> for creating the open-source courses <a class="reference external" href="https://www.kaggle.com/code/fazilbtopal/variantional-autoencoders-vae">Variantional Autoencoders(VAE)</a>. They inspire the majority of the content in this chapter.</p>
 </section>
 </section>
@@ -1959,7 +1960,7 @@ Epoch 50/50
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title"><span class="section-number">7. </span>AUTOENCODERS</p>
+        <p class="prev-next-title"><span class="section-number">8. </span>Autoencoder</p>
       </div>
     </a>
     <a class="right-next"
@@ -1967,7 +1968,7 @@ Epoch 50/50
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title"><span class="section-number">8. </span>Python programming introduction</p>
+        <p class="prev-next-title"><span class="section-number">9. </span>Python programming introduction</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -1987,9 +1988,9 @@ Epoch 50/50
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#code">7.7.1. Code</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#your-turn">7.7.2. Your turn! 🚀</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#acknowledgments">7.7.3. Acknowledgments</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#code">8.7.1. Code</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#your-turn">8.7.2. Your turn! 🚀</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#acknowledgments">8.7.3. Acknowledgments</a></li>
 </ul>
   </nav></div>
 

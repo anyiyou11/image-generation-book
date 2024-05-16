@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>7. AUTOENCODERS &#8212; Image generation learning book</title>
+    <title>8. Autoencoder &#8212; Image generation learning book</title>
   
   
   
@@ -64,8 +64,8 @@
     <link rel="icon" href="../../_static/fav.ico"/>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="7.7. Variational Autoencoder" href="vae.html" />
-    <link rel="prev" title="5. Diffusion Model" href="diffusion-model.html" />
+    <link rel="next" title="8.7. Variational Autoencoder" href="vae.html" />
+    <link rel="prev" title="7. Stable Diffusion Model" href="sd.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -183,20 +183,21 @@
 <li class="toctree-l1"><a class="reference internal" href="gan.html">4. Generative adversarial networks</a></li>
 <li class="toctree-l1"><a class="reference internal" href="diffusion-model.html">5. Diffusion Model</a></li>
 
-<li class="toctree-l1 current active has-children"><a class="current reference internal" href="#">7. AUTOENCODERS</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul>
-<li class="toctree-l2"><a class="reference internal" href="vae.html">7.7. Variational Autoencoder</a></li>
+<li class="toctree-l1"><a class="reference internal" href="sd.html">7. Stable Diffusion Model</a></li>
+<li class="toctree-l1 current active has-children"><a class="current reference internal" href="#">8. Autoencoder</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="vae.html">8.7. Variational Autoencoder</a></li>
 </ul>
 </li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">ASSIGNMENTS</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="../assignments/python-programming-introduction.html">8. Python programming introduction</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../assignments/python-programming-basics.html">9. Python programming basics</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../assignments/python-programming-advanced.html">10. Python programming advanced</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../assignments/art-by-gan.html">11. Art by gan</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../assignments/python-programming-introduction.html">9. Python programming introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../assignments/python-programming-basics.html">10. Python programming basics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../assignments/python-programming-advanced.html">11. Python programming advanced</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../assignments/art-by-gan.html">12. Art by gan</a></li>
 
-<li class="toctree-l1"><a class="reference internal" href="../assignments/denoising-difussion-model.html">13. Denoising Diffusion Models</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../assignments/base-denoising-autoencoder-dimension-reduction.html">14. Base/Denoising Autoencoder &amp; Dimension Reduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../assignments/denoising-difussion-model.html">14. Denoising Diffusion Models</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../assignments/base-denoising-autoencoder-dimension-reduction.html">15. Base/Denoising Autoencoder &amp; Dimension Reduction</a></li>
 </ul>
 
     </div>
@@ -448,7 +449,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>AUTOENCODERS</h1>
+    <h1>Autoencoder</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -458,12 +459,12 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#overview">7.1. Overview</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#autoencoder-structure">7.2. Autoencoder Structure</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#code">7.3. Code</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#your-turn">7.4. Your turn! 🚀</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#self-study">7.5. Self study</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#acknowledgments">7.6. Acknowledgments</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#overview">8.1. Overview</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#autoencoder-structure">8.2. Autoencoder Structure</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#code">8.3. Code</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#your-turn">8.4. Your turn! 🚀</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#self-study">8.5. Self study</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#acknowledgments">8.6. Acknowledgments</a></li>
 </ul>
             </nav>
         </div>
@@ -492,15 +493,15 @@ document.write(`
 </div>
 </details>
 </div>
-<section class="tex2jax_ignore mathjax_ignore" id="autoencoders">
-<h1><span class="section-number">7. </span>AUTOENCODERS<a class="headerlink" href="#autoencoders" title="Link to this heading">#</a></h1>
+<section class="tex2jax_ignore mathjax_ignore" id="autoencoder">
+<h1><span class="section-number">8. </span>Autoencoder<a class="headerlink" href="#autoencoder" title="Link to this heading">#</a></h1>
 <section id="overview">
-<h2><span class="section-number">7.1. </span>Overview<a class="headerlink" href="#overview" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">8.1. </span>Overview<a class="headerlink" href="#overview" title="Link to this heading">#</a></h2>
 <p>An autoencoder, also known as autoassociator or Diabolo networks, is an artificial neural network employed to recreate the given input. It takes a set of <b>unlabeled</b> inputs, encodes them and then tries to extract the most valuable information from them. They are used for feature extraction, learning generative models of data, dimensionality reduction and can be used for compression.</p>
 <p>Autoencoders are based on Restricted Boltzmann Machines, are employed in some of the largest deep learning applications. They are the building blocks of Deep Belief Networks (DBN).</p>
 <img src="https://static-1300131294.cos.ap-shanghai.myqcloud.com/images/deep-learning/VAE/mod_ID_13_final.png" width=400></section>
 <section id="autoencoder-structure">
-<h2><span class="section-number">7.2. </span>Autoencoder Structure<a class="headerlink" href="#autoencoder-structure" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">8.2. </span>Autoencoder Structure<a class="headerlink" href="#autoencoder-structure" title="Link to this heading">#</a></h2>
 <img src="https://static-1300131294.cos.ap-shanghai.myqcloud.com/images/deep-learning/VAE/deep_autoencoder.png">
 <p>An autoencoder can be divided in two parts, the <b>encoder</b> and the <b>decoder</b>.</p>
 <p>The encoder needs to compress the representation of an input. In this case we are going to reduce the dimension. The decoder works like encoder network in reverse. It works to recreate the input, as closely as possible. This plays an important role during training, because it forces the autoencoder to select the most important features in the compressed representation.</p>
@@ -515,7 +516,7 @@ document.write(`
 <p>As it was with the above example, <span class="math notranslate nohighlight">\(x_k\)</span> is one of our inputs and <span class="math notranslate nohighlight">\(\hat{x}_k\)</span> is the respective output, and we want to make our output as similar as possible to our input.</p>
 </section>
 <section id="code">
-<h2><span class="section-number">7.3. </span>Code<a class="headerlink" href="#code" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">8.3. </span>Code<a class="headerlink" href="#code" title="Link to this heading">#</a></h2>
 <p>Let’s build a 2-layers auto-encoder with TensorFlow to compress images to a lower latent space and then reconstruct them. And this project will be done on MNIST dataste.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -764,18 +765,18 @@ step: 20000, loss: 0.003604
 </div>
 </section>
 <section id="your-turn">
-<h2><span class="section-number">7.4. </span>Your turn! 🚀<a class="headerlink" href="#your-turn" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">8.4. </span>Your turn! 🚀<a class="headerlink" href="#your-turn" title="Link to this heading">#</a></h2>
 <p>Assignment - <a class="reference internal" href="../assignments/base-denoising-autoencoder-dimension-reduction.html"><span class="std std-doc">Base denoising autoencoder dimension reduction</span></a></p>
 </section>
 <section id="self-study">
-<h2><span class="section-number">7.5. </span>Self study<a class="headerlink" href="#self-study" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">8.5. </span>Self study<a class="headerlink" href="#self-study" title="Link to this heading">#</a></h2>
 <p>You can refer to this book chapter for further study:</p>
 <ul class="simple">
 <li><p><a class="reference external" href="https://www.deeplearningbook.org/contents/autoencoders.html">deeplearningbook</a></p></li>
 </ul>
 </section>
 <section id="acknowledgments">
-<h2><span class="section-number">7.6. </span>Acknowledgments<a class="headerlink" href="#acknowledgments" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">8.6. </span>Acknowledgments<a class="headerlink" href="#acknowledgments" title="Link to this heading">#</a></h2>
 <p>Thanks to <a class="reference external" href="https://github.com/rasbt">Sebastian Raschka</a> for creating the open-source project <a class="reference external" href="https://github.com/rasbt/stat453-deep-learning-ss20">stat453-deep-learning-ss20</a> and <a class="reference external" href="https://github.com/aymericdamien">Aymeric Damien</a> for creating the open-source project <a class="reference external" href="https://github.com/aymericdamien/TensorFlow-Examples/">TensorFlow-Examples</a>. They inspire the majority of the content in this chapter.</p>
 </section>
 <div class="toctree-wrapper compound">
@@ -813,12 +814,12 @@ step: 20000, loss: 0.003604
                   
 <div class="prev-next-area">
     <a class="left-prev"
-       href="diffusion-model.html"
+       href="sd.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title"><span class="section-number">5. </span>Diffusion Model</p>
+        <p class="prev-next-title"><span class="section-number">7. </span>Stable Diffusion Model</p>
       </div>
     </a>
     <a class="right-next"
@@ -826,7 +827,7 @@ step: 20000, loss: 0.003604
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title"><span class="section-number">7.7. </span>Variational Autoencoder</p>
+        <p class="prev-next-title"><span class="section-number">8.7. </span>Variational Autoencoder</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -846,12 +847,12 @@ step: 20000, loss: 0.003604
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#overview">7.1. Overview</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#autoencoder-structure">7.2. Autoencoder Structure</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#code">7.3. Code</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#your-turn">7.4. Your turn! 🚀</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#self-study">7.5. Self study</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#acknowledgments">7.6. Acknowledgments</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#overview">8.1. Overview</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#autoencoder-structure">8.2. Autoencoder Structure</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#code">8.3. Code</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#your-turn">8.4. Your turn! 🚀</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#self-study">8.5. Self study</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#acknowledgments">8.6. Acknowledgments</a></li>
 </ul>
   </nav></div>
 

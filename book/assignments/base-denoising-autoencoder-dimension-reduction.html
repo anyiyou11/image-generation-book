@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>14. Base/Denoising Autoencoder &amp; Dimension Reduction &#8212; Image generation learning book</title>
+    <title>15. Base/Denoising Autoencoder &amp; Dimension Reduction &#8212; Image generation learning book</title>
   
   
   
@@ -64,7 +64,7 @@
     <link rel="icon" href="../../_static/fav.ico"/>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="prev" title="13. Denoising Diffusion Models" href="denoising-difussion-model.html" />
+    <link rel="prev" title="14. Denoising Diffusion Models" href="denoising-difussion-model.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -182,20 +182,21 @@
 <li class="toctree-l1"><a class="reference internal" href="../generation-model/gan.html">4. Generative adversarial networks</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../generation-model/diffusion-model.html">5. Diffusion Model</a></li>
 
-<li class="toctree-l1 has-children"><a class="reference internal" href="../generation-model/autoencoder.html">7. AUTOENCODERS</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul>
-<li class="toctree-l2"><a class="reference internal" href="../generation-model/vae.html">7.7. Variational Autoencoder</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../generation-model/sd.html">7. Stable Diffusion Model</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../generation-model/autoencoder.html">8. Autoencoder</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../generation-model/vae.html">8.7. Variational Autoencoder</a></li>
 </ul>
 </li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">ASSIGNMENTS</span></p>
 <ul class="current nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="python-programming-introduction.html">8. Python programming introduction</a></li>
-<li class="toctree-l1"><a class="reference internal" href="python-programming-basics.html">9. Python programming basics</a></li>
-<li class="toctree-l1"><a class="reference internal" href="python-programming-advanced.html">10. Python programming advanced</a></li>
-<li class="toctree-l1"><a class="reference internal" href="art-by-gan.html">11. Art by gan</a></li>
+<li class="toctree-l1"><a class="reference internal" href="python-programming-introduction.html">9. Python programming introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="python-programming-basics.html">10. Python programming basics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="python-programming-advanced.html">11. Python programming advanced</a></li>
+<li class="toctree-l1"><a class="reference internal" href="art-by-gan.html">12. Art by gan</a></li>
 
-<li class="toctree-l1"><a class="reference internal" href="denoising-difussion-model.html">13. Denoising Diffusion Models</a></li>
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">14. Base/Denoising Autoencoder &amp; Dimension Reduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="denoising-difussion-model.html">14. Denoising Diffusion Models</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">15. Base/Denoising Autoencoder &amp; Dimension Reduction</a></li>
 </ul>
 
     </div>
@@ -457,34 +458,34 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#introduction">14.1. Introduction</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#loading-and-scaling-datasets">14.2. Loading and Scaling Datasets</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#load-model">14.3. Load model</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#checking-dataset-by-2d-plot">14.3.1. Checking dataset by 2D plot</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#checking-dataset-by-3d-plot">14.3.2. Checking dataset by 3D plot</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#introduction">15.1. Introduction</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#loading-and-scaling-datasets">15.2. Loading and Scaling Datasets</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#load-model">15.3. Load model</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#checking-dataset-by-2d-plot">15.3.1. Checking dataset by 2D plot</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#checking-dataset-by-3d-plot">15.3.2. Checking dataset by 3D plot</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#base-autoencoder">14.4. Base Autoencoder</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#modeling">14.4.1. Modeling</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#training">14.4.2. Training</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#plotting-the-latent-space-after-dimension-reduction">14.4.3. Plotting the latent space after Dimension Reduction</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#checking-results">14.4.4. Checking results</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#base-autoencoder">15.4. Base Autoencoder</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#modeling">15.4.1. Modeling</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#training">15.4.2. Training</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#plotting-the-latent-space-after-dimension-reduction">15.4.3. Plotting the latent space after Dimension Reduction</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#checking-results">15.4.4. Checking results</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#denoising-autoencoder">14.5. Denoising Autoencoder</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#adding-random-noise-to-the-image">14.5.1. Adding random noise to the image.</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#plotting-a-noisy-image">14.5.2. Plotting a noisy image.</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#checking-noisy-dataset-using-demension-reduction">14.5.3. Checking Noisy Dataset using Demension Reduction</a><ul class="nav section-nav flex-column">
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#noisy-dataset">14.5.3.1. 1) Noisy Dataset</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#orignal-dataset">14.5.3.2. 2) Orignal Dataset</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#denoising-autoencoder">15.5. Denoising Autoencoder</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#adding-random-noise-to-the-image">15.5.1. Adding random noise to the image.</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#plotting-a-noisy-image">15.5.2. Plotting a noisy image.</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#checking-noisy-dataset-using-demension-reduction">15.5.3. Checking Noisy Dataset using Demension Reduction</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#noisy-dataset">15.5.3.1. 1) Noisy Dataset</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#orignal-dataset">15.5.3.2. 2) Orignal Dataset</a></li>
 </ul>
 </li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">14.5.4. Modeling</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">14.5.5. Training</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">14.5.6. Checking results</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">15.5.4. Modeling</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">15.5.5. Training</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">15.5.6. Checking results</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#acknowledgments">14.6. Acknowledgments</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#acknowledgments">15.6. Acknowledgments</a></li>
 </ul>
             </nav>
         </div>
@@ -497,9 +498,9 @@ document.write(`
                 <article class="bd-article">
                   
   <section class="tex2jax_ignore mathjax_ignore" id="base-denoising-autoencoder-dimension-reduction">
-<h1><span class="section-number">14. </span>Base/Denoising Autoencoder &amp; Dimension Reduction<a class="headerlink" href="#base-denoising-autoencoder-dimension-reduction" title="Link to this heading">#</a></h1>
+<h1><span class="section-number">15. </span>Base/Denoising Autoencoder &amp; Dimension Reduction<a class="headerlink" href="#base-denoising-autoencoder-dimension-reduction" title="Link to this heading">#</a></h1>
 <section id="introduction">
-<h2><span class="section-number">14.1. </span>Introduction<a class="headerlink" href="#introduction" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">15.1. </span>Introduction<a class="headerlink" href="#introduction" title="Link to this heading">#</a></h2>
 <p><img alt="" src="https://static-1300131294.cos.ap-shanghai.myqcloud.com/data/deep-learning/autoencoder/base-denoising-autoencoder-dimension-reduction/base_noise.gif" /></p>
 <p>Autoencoder is a neural network that simply copies input to output. In some ways, it looks like a simple neural network, but it makes a difficult neural network by constraining the network in various ways. For example, the number of neurons in the hidden layer is smaller than that of the input layer to compress the data (reduce the dimension), or add noise to the input data and then restore the original input. There are various autoencoders, such as learning These constraints prevent the autoencoder from simply copying the input directly to the output, and control it to learn how to represent the data efficiently.</p>
 <p>In this notebook, we will cover two autoencoders:</p>
@@ -534,7 +535,7 @@ document.write(`
 </div>
 </section>
 <section id="loading-and-scaling-datasets">
-<h2><span class="section-number">14.2. </span>Loading and Scaling Datasets<a class="headerlink" href="#loading-and-scaling-datasets" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">15.2. </span>Loading and Scaling Datasets<a class="headerlink" href="#loading-and-scaling-datasets" title="Link to this heading">#</a></h2>
 <p>Train a basic autoencoder using the Fashon MNIST dataset. Each image in this dataset is 28x28 pixels.
 Inputs are scaled for training.</p>
 <div class="cell docutils container">
@@ -558,7 +559,7 @@ Inputs are scaled for training.</p>
 </div>
 </section>
 <section id="load-model">
-<h2><span class="section-number">14.3. </span>Load model<a class="headerlink" href="#load-model" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">15.3. </span>Load model<a class="headerlink" href="#load-model" title="Link to this heading">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">os</span>
@@ -614,7 +615,7 @@ Inputs are scaled for training.</p>
 </div>
 </div>
 <section id="checking-dataset-by-2d-plot">
-<h3><span class="section-number">14.3.1. </span>Checking dataset by 2D plot<a class="headerlink" href="#checking-dataset-by-2d-plot" title="Link to this heading">#</a></h3>
+<h3><span class="section-number">15.3.1. </span>Checking dataset by 2D plot<a class="headerlink" href="#checking-dataset-by-2d-plot" title="Link to this heading">#</a></h3>
 <p>Autoencoding can be thought of as a kind of dimensionality reduction process. Therefore, after compressing the fashion MNIST dataset through UMAP in two dimensions, let’s check how it is mapped for each label.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -674,7 +675,7 @@ Inputs are scaled for training.</p>
 <p>Ref: <a class="reference external" href="https://umap-learn.readthedocs.io/en">https://umap-learn.readthedocs.io/en</a></p>
 </section>
 <section id="checking-dataset-by-3d-plot">
-<h3><span class="section-number">14.3.2. </span>Checking dataset by 3D plot<a class="headerlink" href="#checking-dataset-by-3d-plot" title="Link to this heading">#</a></h3>
+<h3><span class="section-number">15.3.2. </span>Checking dataset by 3D plot<a class="headerlink" href="#checking-dataset-by-3d-plot" title="Link to this heading">#</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">plotly.express</span> <span class="k">as</span> <span class="nn">px</span>
@@ -705,9 +706,9 @@ Inputs are scaled for training.</p>
 </section>
 </section>
 <section id="base-autoencoder">
-<h2><span class="section-number">14.4. </span>Base Autoencoder<a class="headerlink" href="#base-autoencoder" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">15.4. </span>Base Autoencoder<a class="headerlink" href="#base-autoencoder" title="Link to this heading">#</a></h2>
 <section id="modeling">
-<h3><span class="section-number">14.4.1. </span>Modeling<a class="headerlink" href="#modeling" title="Link to this heading">#</a></h3>
+<h3><span class="section-number">15.4.1. </span>Modeling<a class="headerlink" href="#modeling" title="Link to this heading">#</a></h3>
 <p>An autoencoder always consists of two parts: an encoder and a decoder.</p>
 <ul class="simple">
 <li><p>Encoder (Recognition network): it transforms an input into an internal representation.</p></li>
@@ -751,7 +752,7 @@ Inputs are scaled for training.</p>
 </div>
 </section>
 <section id="training">
-<h3><span class="section-number">14.4.2. </span>Training<a class="headerlink" href="#training" title="Link to this heading">#</a></h3>
+<h3><span class="section-number">15.4.2. </span>Training<a class="headerlink" href="#training" title="Link to this heading">#</a></h3>
 <p>Train the model using x_train as input and target. The encoder learns to compress the dataset into a latent space in 784 dimensions, and the decoder learns to reconstruct the original image.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -782,7 +783,7 @@ Inputs are scaled for training.</p>
 </div>
 </section>
 <section id="plotting-the-latent-space-after-dimension-reduction">
-<h3><span class="section-number">14.4.3. </span>Plotting the latent space after Dimension Reduction<a class="headerlink" href="#plotting-the-latent-space-after-dimension-reduction" title="Link to this heading">#</a></h3>
+<h3><span class="section-number">15.4.3. </span>Plotting the latent space after Dimension Reduction<a class="headerlink" href="#plotting-the-latent-space-after-dimension-reduction" title="Link to this heading">#</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">y_test</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">y_test</span><span class="p">,</span><span class="n">columns</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;class&#39;</span><span class="p">])</span>
@@ -808,7 +809,7 @@ Inputs are scaled for training.</p>
 <p>The <span class="math notranslate nohighlight">\(28*28\)</span> dimension input is compressed into the <span class="math notranslate nohighlight">\(7*7\)</span> latent space by the encoder. The latent space is compressed into 2D using Dimension Reduction. Although it is an approximate expression, it can be seen that each class is well clustered in the compressed latent space.</p>
 </section>
 <section id="checking-results">
-<h3><span class="section-number">14.4.4. </span>Checking results<a class="headerlink" href="#checking-results" title="Link to this heading">#</a></h3>
+<h3><span class="section-number">15.4.4. </span>Checking results<a class="headerlink" href="#checking-results" title="Link to this heading">#</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">n</span> <span class="o">=</span> <span class="mi">4</span>
@@ -841,7 +842,7 @@ Inputs are scaled for training.</p>
 </section>
 </section>
 <section id="denoising-autoencoder">
-<h2><span class="section-number">14.5. </span>Denoising Autoencoder<a class="headerlink" href="#denoising-autoencoder" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">15.5. </span>Denoising Autoencoder<a class="headerlink" href="#denoising-autoencoder" title="Link to this heading">#</a></h2>
 <p>Another way to constrain the autoencoder to learn meaningful features is to add noise to the input and train it to reconstruct the original noise-free input. Noise can be generated by adding Gaussian noise to the input as shown in the figure below, or by randomly turning off the input unit (node) like a dropout.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -869,7 +870,7 @@ Inputs are scaled for training.</p>
 </div>
 </div>
 <section id="adding-random-noise-to-the-image">
-<h3><span class="section-number">14.5.1. </span>Adding random noise to the image.<a class="headerlink" href="#adding-random-noise-to-the-image" title="Link to this heading">#</a></h3>
+<h3><span class="section-number">15.5.1. </span>Adding random noise to the image.<a class="headerlink" href="#adding-random-noise-to-the-image" title="Link to this heading">#</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">noise_factor</span> <span class="o">=</span> <span class="mf">0.2</span>
@@ -884,7 +885,7 @@ Inputs are scaled for training.</p>
 </div>
 </section>
 <section id="plotting-a-noisy-image">
-<h3><span class="section-number">14.5.2. </span>Plotting a noisy image.<a class="headerlink" href="#plotting-a-noisy-image" title="Link to this heading">#</a></h3>
+<h3><span class="section-number">15.5.2. </span>Plotting a noisy image.<a class="headerlink" href="#plotting-a-noisy-image" title="Link to this heading">#</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">n</span> <span class="o">=</span> <span class="mi">4</span>
@@ -904,9 +905,9 @@ Inputs are scaled for training.</p>
 </div>
 </section>
 <section id="checking-noisy-dataset-using-demension-reduction">
-<h3><span class="section-number">14.5.3. </span>Checking Noisy Dataset using Demension Reduction<a class="headerlink" href="#checking-noisy-dataset-using-demension-reduction" title="Link to this heading">#</a></h3>
+<h3><span class="section-number">15.5.3. </span>Checking Noisy Dataset using Demension Reduction<a class="headerlink" href="#checking-noisy-dataset-using-demension-reduction" title="Link to this heading">#</a></h3>
 <section id="noisy-dataset">
-<h4><span class="section-number">14.5.3.1. </span>1) Noisy Dataset<a class="headerlink" href="#noisy-dataset" title="Link to this heading">#</a></h4>
+<h4><span class="section-number">15.5.3.1. </span>1) Noisy Dataset<a class="headerlink" href="#noisy-dataset" title="Link to this heading">#</a></h4>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x_train_noisy_flat</span> <span class="o">=</span> <span class="n">x_train</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="n">x_train_noisy</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="o">-</span><span class="mi">1</span><span class="p">)</span>
@@ -938,7 +939,7 @@ Inputs are scaled for training.</p>
 </div>
 </section>
 <section id="orignal-dataset">
-<h4><span class="section-number">14.5.3.2. </span>2) Orignal Dataset<a class="headerlink" href="#orignal-dataset" title="Link to this heading">#</a></h4>
+<h4><span class="section-number">15.5.3.2. </span>2) Orignal Dataset<a class="headerlink" href="#orignal-dataset" title="Link to this heading">#</a></h4>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x_train_flat</span> <span class="o">=</span> <span class="n">x_train</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="n">x_train</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="o">-</span><span class="mi">1</span><span class="p">)</span>
@@ -967,7 +968,7 @@ In any case, the visually large noise does not show much difference after dimens
 </section>
 </section>
 <section id="id1">
-<h3><span class="section-number">14.5.4. </span>Modeling<a class="headerlink" href="#id1" title="Link to this heading">#</a></h3>
+<h3><span class="section-number">15.5.4. </span>Modeling<a class="headerlink" href="#id1" title="Link to this heading">#</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Denoise</span><span class="p">(</span><span class="n">Model</span><span class="p">):</span>
@@ -1002,7 +1003,7 @@ In any case, the visually large noise does not show much difference after dimens
 </div>
 </section>
 <section id="id2">
-<h3><span class="section-number">14.5.5. </span>Training<a class="headerlink" href="#id2" title="Link to this heading">#</a></h3>
+<h3><span class="section-number">15.5.5. </span>Training<a class="headerlink" href="#id2" title="Link to this heading">#</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">autoencoder</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">x_train_noisy</span><span class="p">,</span> <span class="n">x_train</span><span class="p">,</span>
@@ -1122,7 +1123,7 @@ _________________________________________________________________
 </div>
 </section>
 <section id="id3">
-<h3><span class="section-number">14.5.6. </span>Checking results<a class="headerlink" href="#id3" title="Link to this heading">#</a></h3>
+<h3><span class="section-number">15.5.6. </span>Checking results<a class="headerlink" href="#id3" title="Link to this heading">#</a></h3>
 <p>Plots both the noisy and denoised images generated by the autoencoder.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1164,7 +1165,7 @@ _________________________________________________________________
 </section>
 </section>
 <section id="acknowledgments">
-<h2><span class="section-number">14.6. </span>Acknowledgments<a class="headerlink" href="#acknowledgments" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">15.6. </span>Acknowledgments<a class="headerlink" href="#acknowledgments" title="Link to this heading">#</a></h2>
 <p>Thanks to TOH SEOK KIM for creating the Kaggle open-source project <a class="reference external" href="https://www.kaggle.com/code/ohseokkim/base-denoising-autoencoder-dimension-reduction">Base/Denoising Autoencoder + Dimension Reduction</a>. It inspires the majority of the content in this chapter.</p>
 </section>
 </section>
@@ -1205,7 +1206,7 @@ _________________________________________________________________
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title"><span class="section-number">13. </span>Denoising Diffusion Models</p>
+        <p class="prev-next-title"><span class="section-number">14. </span>Denoising Diffusion Models</p>
       </div>
     </a>
 </div>
@@ -1224,34 +1225,34 @@ _________________________________________________________________
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#introduction">14.1. Introduction</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#loading-and-scaling-datasets">14.2. Loading and Scaling Datasets</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#load-model">14.3. Load model</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#checking-dataset-by-2d-plot">14.3.1. Checking dataset by 2D plot</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#checking-dataset-by-3d-plot">14.3.2. Checking dataset by 3D plot</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#introduction">15.1. Introduction</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#loading-and-scaling-datasets">15.2. Loading and Scaling Datasets</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#load-model">15.3. Load model</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#checking-dataset-by-2d-plot">15.3.1. Checking dataset by 2D plot</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#checking-dataset-by-3d-plot">15.3.2. Checking dataset by 3D plot</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#base-autoencoder">14.4. Base Autoencoder</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#modeling">14.4.1. Modeling</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#training">14.4.2. Training</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#plotting-the-latent-space-after-dimension-reduction">14.4.3. Plotting the latent space after Dimension Reduction</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#checking-results">14.4.4. Checking results</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#base-autoencoder">15.4. Base Autoencoder</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#modeling">15.4.1. Modeling</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#training">15.4.2. Training</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#plotting-the-latent-space-after-dimension-reduction">15.4.3. Plotting the latent space after Dimension Reduction</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#checking-results">15.4.4. Checking results</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#denoising-autoencoder">14.5. Denoising Autoencoder</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#adding-random-noise-to-the-image">14.5.1. Adding random noise to the image.</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#plotting-a-noisy-image">14.5.2. Plotting a noisy image.</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#checking-noisy-dataset-using-demension-reduction">14.5.3. Checking Noisy Dataset using Demension Reduction</a><ul class="nav section-nav flex-column">
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#noisy-dataset">14.5.3.1. 1) Noisy Dataset</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#orignal-dataset">14.5.3.2. 2) Orignal Dataset</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#denoising-autoencoder">15.5. Denoising Autoencoder</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#adding-random-noise-to-the-image">15.5.1. Adding random noise to the image.</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#plotting-a-noisy-image">15.5.2. Plotting a noisy image.</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#checking-noisy-dataset-using-demension-reduction">15.5.3. Checking Noisy Dataset using Demension Reduction</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#noisy-dataset">15.5.3.1. 1) Noisy Dataset</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#orignal-dataset">15.5.3.2. 2) Orignal Dataset</a></li>
 </ul>
 </li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">14.5.4. Modeling</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">14.5.5. Training</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">14.5.6. Checking results</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">15.5.4. Modeling</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">15.5.5. Training</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">15.5.6. Checking results</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#acknowledgments">14.6. Acknowledgments</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#acknowledgments">15.6. Acknowledgments</a></li>
 </ul>
   </nav></div>
 
